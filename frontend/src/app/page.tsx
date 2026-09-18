@@ -22,10 +22,10 @@ const STATUS_CONFIG: Record<string, { bg: string; text: string; icon: React.Comp
 };
 
 const FEATURES = [
-  { icon: Zap, title: "Auto Schema Mapping", desc: "Intelligent column matching with confidence scores" },
-  { icon: GitMerge, title: "Smart Deduplication", desc: "Fuzzy name + email matching across files" },
-  { icon: Shield, title: "Data Validation", desc: "Per-field rules with auto-fix attempts" },
-  { icon: Users, title: "Human-in-the-Loop", desc: "Review only what the agent can't decide" },
+  { icon: Zap, title: "Auto Schema Mapping", desc: "Intelligent column matching with confidence scores", color: "text-indigo-600", bg: "bg-indigo-50" },
+  { icon: GitMerge, title: "Smart Deduplication", desc: "Fuzzy name + email matching across files", color: "text-violet-600", bg: "bg-violet-50" },
+  { icon: Shield, title: "Data Validation", desc: "Per-field rules with auto-fix attempts", color: "text-emerald-600", bg: "bg-emerald-50" },
+  { icon: Users, title: "Human-in-the-Loop", desc: "Review only what the agent can't decide", color: "text-blue-600", bg: "bg-blue-50" },
 ];
 
 export default function Home() {
@@ -61,17 +61,17 @@ export default function Home() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto space-y-10 animate-fade-in">
+    <div className="max-w-2xl mx-auto space-y-8 animate-fade-in">
       {/* Hero */}
-      <div className="text-center pt-8 pb-2">
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-50 text-indigo-600 text-xs font-semibold mb-5 border border-indigo-100">
+      <div className="text-center pt-10 pb-4 hero-gradient rounded-3xl -mx-2 px-6">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-50 text-indigo-600 text-xs font-semibold mb-6 border border-indigo-100 shadow-sm">
           <Layers className="w-3.5 h-3.5" />
           AI-Powered Migration Pipeline
         </div>
-        <h1 className="text-4xl font-bold text-slate-900 tracking-tight">
+        <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight gradient-text leading-tight pb-1">
           Data Migration Agent
         </h1>
-        <p className="text-slate-500 mt-3 text-[15px] max-w-lg mx-auto leading-relaxed">
+        <p className="text-slate-500 mt-4 text-[15px] max-w-lg mx-auto leading-relaxed">
           Transform messy HR data from multiple CSV and Excel files into a clean, unified schema — with intelligent automation and human oversight.
         </p>
       </div>
@@ -79,9 +79,9 @@ export default function Home() {
       {/* Feature pills */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         {FEATURES.map((f) => (
-          <div key={f.title} className="flex items-start gap-3 bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
-            <div className="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center shrink-0">
-              <f.icon className="w-4 h-4 text-indigo-600" />
+          <div key={f.title} className="flex items-start gap-3 bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-200 group">
+            <div className={`w-9 h-9 rounded-lg ${f.bg} flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform`}>
+              <f.icon className={`w-4 h-4 ${f.color}`} />
             </div>
             <div>
               <p className="text-sm font-semibold text-slate-800">{f.title}</p>
@@ -107,13 +107,13 @@ export default function Home() {
               onChange={(e) => setName(e.target.value)}
               placeholder="e.g. Q4 HR Data Migration"
               aria-label="Session name"
-              className="flex-1 h-11 border border-slate-200 rounded-xl px-4 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-400 transition placeholder:text-slate-400"
+              className="flex-1 h-12 border border-slate-200 rounded-xl px-4 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-400 transition placeholder:text-slate-400 bg-slate-50/50 focus:bg-white"
               onKeyDown={(e) => e.key === "Enter" && createSession()}
             />
             <button
               onClick={createSession}
               disabled={creating || !name.trim()}
-              className="h-11 px-6 bg-indigo-600 text-white rounded-xl font-medium text-sm hover:bg-indigo-700 active:bg-indigo-800 disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-2 transition-all shadow-sm hover:shadow"
+              className="h-12 px-7 bg-gradient-to-r from-indigo-600 to-blue-600 text-white rounded-xl font-semibold text-sm hover:from-indigo-700 hover:to-blue-700 active:from-indigo-800 active:to-blue-800 disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-2 transition-all shadow-md shadow-indigo-200/50 hover:shadow-lg hover:shadow-indigo-200/60"
             >
               {creating ? (
                 <Loader2 className="w-4 h-4 animate-spin" />
@@ -126,7 +126,10 @@ export default function Home() {
             </button>
           </div>
           {error && (
-            <p className="text-sm text-red-600 mt-2">{error}</p>
+            <p className="text-sm text-red-600 mt-3 flex items-center gap-1.5">
+              <AlertTriangle className="w-3.5 h-3.5" />
+              {error}
+            </p>
           )}
         </div>
       </div>
@@ -138,6 +141,7 @@ export default function Home() {
             <h2 className="font-semibold text-slate-900 flex items-center gap-2">
               <Clock className="w-4 h-4 text-slate-400" />
               Recent Sessions
+              <span className="text-xs font-medium text-slate-400 ml-auto">{sessions.length} total</span>
             </h2>
           </div>
           <div className="divide-y divide-slate-100">
@@ -148,20 +152,20 @@ export default function Home() {
                 <Link
                   key={s.id}
                   href={getSessionHref(s)}
-                  className="flex items-center gap-4 px-6 py-4 hover:bg-slate-50/80 transition-colors group"
+                  className="flex items-center gap-4 px-6 py-4 hover:bg-indigo-50/40 transition-colors group"
                   style={{ animationDelay: `${i * 50}ms` }}
                 >
-                  <div className="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center shrink-0 group-hover:bg-slate-200/80 transition-colors">
-                    <Database className="w-5 h-5 text-slate-500" />
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-slate-100 to-slate-50 border border-slate-200 flex items-center justify-center shrink-0 group-hover:border-indigo-200 group-hover:from-indigo-50 group-hover:to-blue-50 transition-all">
+                    <Database className="w-4 h-4 text-slate-400 group-hover:text-indigo-500 transition-colors" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="font-medium text-sm text-slate-900 truncate">{s.name}</p>
+                    <p className="font-medium text-sm text-slate-900 truncate group-hover:text-indigo-900 transition-colors">{s.name}</p>
                     <p className="text-xs text-slate-400 mt-0.5">
                       {new Date(s.created_at).toLocaleDateString("en-US", {
                         month: "short", day: "numeric", hour: "2-digit", minute: "2-digit",
                       })}
                       {s.stats?.pushed != null && (
-                        <span className="ml-2 text-emerald-500">{s.stats.pushed} pushed</span>
+                        <span className="ml-2 text-emerald-500 font-medium">{s.stats.pushed} pushed</span>
                       )}
                     </p>
                   </div>
@@ -169,7 +173,7 @@ export default function Home() {
                     <Icon className={`w-3.5 h-3.5 ${s.status === "processing" ? "animate-spin" : ""}`} />
                     {s.status.replace(/_/g, " ")}
                   </div>
-                  <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-slate-500 transition-colors shrink-0" />
+                  <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-indigo-500 group-hover:translate-x-0.5 transition-all shrink-0" />
                 </Link>
               );
             })}
@@ -178,7 +182,30 @@ export default function Home() {
       )}
 
       {loaded && sessions.length === 0 && (
-        <p className="text-center text-sm text-slate-400 py-4">No sessions yet. Create one above to get started.</p>
+        <div className="text-center py-8">
+          <div className="w-16 h-16 rounded-2xl bg-slate-100 flex items-center justify-center mx-auto mb-4">
+            <Database className="w-7 h-7 text-slate-300" />
+          </div>
+          <p className="text-sm text-slate-400">No sessions yet. Create one above to get started.</p>
+        </div>
+      )}
+
+      {/* Loading skeleton */}
+      {!loaded && (
+        <div className="space-y-3">
+          {[1, 2].map((i) => (
+            <div key={i} className="bg-white rounded-2xl border border-slate-200 p-6">
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-xl animate-shimmer" />
+                <div className="flex-1 space-y-2">
+                  <div className="h-4 w-32 rounded animate-shimmer" />
+                  <div className="h-3 w-24 rounded animate-shimmer" />
+                </div>
+                <div className="h-6 w-20 rounded-lg animate-shimmer" />
+              </div>
+            </div>
+          ))}
+        </div>
       )}
     </div>
   );
