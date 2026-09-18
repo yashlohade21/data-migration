@@ -1,4 +1,5 @@
 import os
+import logging
 from fastapi import APIRouter, Depends, HTTPException, UploadFile, File
 from sqlalchemy.orm import Session as DBSession
 from app.database import get_db
@@ -7,11 +8,18 @@ from app.schemas import FileResponse
 from app.services.file_parser import parse_file
 from app.config import UPLOAD_DIR, MAX_UPLOAD_SIZE_MB
 
+logger = logging.getLogger("migration.upload")
+
+MAX_FILES_PER_UPLOAD = 10
+
 router = APIRouter(prefix="/api/sessions/{session_id}", tags=["upload"])
 
 
 @router.post("/upload", response_model=list[FileResponse])
 async def upload_files(session_id: str, files: list[UploadFile] = File(...), db: DBSession = Depends(get_db)):
+    if len(files) > MAX_FILES_PER_UPLOAD:
+        raise HTTPException(status_code=400, detail=f"Maximum {MAX_FILES_PER_UPLOAD} files per upload")
+
     session = db.query(Session).filter(Session.id == session_id).first()
     if not session:
         raise HTTPException(status_code=404, detail="Session not found")
@@ -37,8 +45,9 @@ async def upload_files(session_id: str, files: list[UploadFile] = File(...), db:
         try:
             df, columns = parse_file(filepath)
         except Exception as e:
+            logger.error("Failed to parse %s: %s", file.filename, e)
             os.remove(filepath)
-            raise HTTPException(status_code=400, detail=f"Failed to parse {file.filename}: {str(e)}")
+            raise HTTPException(status_code=400, detail=f"Failed to parse {file.filename}. Please check the file format.")
 
         uploaded = UploadedFile(
             id=file_id,

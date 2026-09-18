@@ -1,9 +1,0 @@
-Full Name,Email Address,Phone Number,Department,Job Title,Joining Date,Date of Birth,Gender,Work Location,Employment Type,Employee ID,Manager Email,Salary
-Rajesh Kumar,rajesh.kumar@techcorp.com,+91-9876543210,Engineering,Senior Developer,2023-01-15,1990-05-20,Male,Hyderabad,Full-time,TC001,anita.shah@techcorp.com,1500000
-Priya Sharma,priya.sharma@techcorp.com,+91-9876543211,Human Resources,HR Manager,2022-06-01,1988-11-12,Female,Bangalore,Full-time,TC002,vikram.patel@techcorp.com,1200000
-Amit Patel,amit.patel@techcorp.com,+91-9876543212,Sales,VP Sales,15/03/2023,1985-03-25,Male,Mumbai,Full-time,TC003,ceo@techcorp.com,2500000
-Sneha Reddy,sneha.reddy@techcorp.com,+91-9876543213,Eng,DevOps Lead,2023-04-01,1992-09-15,Female,Hyderabad,Full-time,TC004,rajesh.kumar@techcorp.com,1400000
-Vikram Singh,vikram.singh@techcorp.com,+91-9876543214,Mktg,Marketing Manager,01-05-2023,1991-07-30,Male,Delhi,Contract,TC005,priya.sharma@techcorp.com,1100000
-Anita Shah,anita.shah@techcorp.com,+91-9876543215,Engineering,Engineering Director,2021-01-10,1983-02-14,Female,Hyderabad,Full-time,TC006,ceo@techcorp.com,3000000
-Karthik Nair,karthik.nair@techcorp.com,+91-9876543216,Data Science,ML Engineer,2023-08-20,1994-12-05,Male,Bangalore,Full-time,TC007,anita.shah@techcorp.com,1600000
-Deepa Iyer,deepa.iyer@techcorp.com,+91-9876543217,Product,Product Manager,2022-11-15,1989-06-22,Female,Mumbai,Full-time,TC008,vikram.patel@techcorp.com,1800000

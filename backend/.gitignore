@@ -1,7 +1,7 @@
-.neon
 .env
 .env.local
-node_modules/
 *.db
+uploads/
 __pycache__/
 *.pyc
+*.pyo
