@@ -1,0 +1,41 @@
+employee_id,full_name,email,phone_number,department,title,date_of_joining,dob,gender,work_location,reporting_manager,employment_status,employment_type,compensation
+HR-701,Dev Kumar,dev.kumar@company.com,+91 71041 13905,Engg,Associate,2019-04-08,1987-02-24,male,Delhi,manager2@company.com,Active,FT,797365
+HR-770,Kavya Das,kavya.das@company.com,+91 79115 10851,Engg,Analyst,2023-11-23,1992-07-18,F,Pune,manager1@company.com,Active,PT,1083798
+HR-730,Rahul Joshi,rahul.joshi@company.com,+91 89782 44671,Sales,Analyst,2018-06-25,1988-07-03,M,Mumbai,manager4@company.com,Active,PT,568910
+HR-133,Pallavi Kumar,pallavi.kumar@company.com,+91 93087 19116,Prod,Senior Engineer,2024-05-18,1996-10-21,male,Bangalore,manager3@company.com,Active,FT,570678
+HR-554,Mira Rao,mira.rao@company.com,+91 81641 37460,Mktg,Analyst,2021-02-28,1996-08-09,Female,Mumbai,manager4@company.com,Active,Full-time,1500733
+HR-975,Komal Reddy,komal.reddy@company.com,+91 97618 17331,HR,Manager,2020-07-15,1992-12-21,female,Mumbai,manager3@company.com,Active,Full-time,1323719
+HR-802,Amit Desai,amit.desai@company.com,+91 85035 28726,Fin,Senior Engineer,2023-10-07,2000-04-11,F,Chennai,manager3@company.com,Active,FT,1532351
+HR-760,Meera Mishra,meera.mishra@company.com,+91 98216 24371,Fin,Director,2020-07-19,2000-03-08,Male,Hyderabad,manager3@company.com,Active,FT,998998
+HR-507,Om Iyer,om.iyer@company.com,+91 73753 99353,Mktg,Director,2021-10-13,1985-05-17,female,Chennai,manager3@company.com,Active,Part-time,2627094
+HR-225,Mira Malhotra,mira.malhotra@company.com,+91 86635 23947,Mktg,Associate,2021-03-14,1993-12-01,male,Bangalore,manager4@company.com,Active,FT,1613783
+HR-778,Shaurya Chopra,shaurya.chopra@company.com,+91 71898 41571,Sales,Software Engineer,2021-06-20,1996-02-01,M,Bangalore,manager2@company.com,Active,Full-time,2813776
+HR-754,Reyansh Shah,reyansh.shah@company.com,+91 83865 37760,Mktg,Manager,2021-11-05,1993-03-18,male,Pune,manager5@company.com,Active,FT,2614770
+HR-151,Zara Rao,zara.rao@company.com,+91 70689 87110,Prod,Lead,2021-09-15,1992-04-04,Male,Mumbai,manager3@company.com,Active,FT,2705240
+HR-228,Tanvi Verma,tanvi.verma@company.com,+91 86847 41195,Engg,Senior Engineer,2018-11-23,1986-02-08,M,Hyderabad,manager5@company.com,Active,PT,1544914
+HR-170,Isha Mishra,isha.mishra@company.com,+91 84124 56438,Sales,VP,2024-08-08,1988-04-14,Male,Chennai,manager5@company.com,Active,PT,2153769
+HR-700,Sneha Rao,sneha.rao@company.com,+91 78668 91927,Engg,Analyst,2020-12-10,1987-08-23,female,Bangalore,manager2@company.com,Active,FT,2854295
+HR-436,Karan Kumar,karan.kumar@company.com,+91 97008 84607,HR,Manager,2018-03-09,1994-03-02,male,Chennai,manager2@company.com,Active,PT,1638636
+HR-102,Krishna Mehta,krishna.mehta@company.com,+91 99144 66626,Fin,Director,2022-09-09,1987-08-16,male,Hyderabad,manager3@company.com,Active,Part-time,1720878
+HR-233,Vivaan Singh,vivaan.singh@company.com,+91 87005 95394,HR,Software Engineer,2024-11-25,1986-10-09,Female,Delhi,manager5@company.com,Active,Part-time,2237697
+HR-917,Ananya Chauhan,ananya.chauhan@company.com,+91 98106 31079,Prod,VP,2020-08-03,1995-06-14,female,Hyderabad,manager2@company.com,Active,PT,1747704
+HR-776,Yash Shah,yash.shah@company.com,+91 73798 62976,Fin,Director,2018-09-27,1995-02-15,M,Mumbai,manager1@company.com,Active,Full-time,2525648
+HR-115,Jay Mishra,jay.mishra@company.com,+91 94903 16764,Des,Director,2022-04-02,2000-10-12,female,Delhi,manager3@company.com,Active,Part-time,1234971
+HR-702,Anjali Gupta,anjali.gupta@company.com,+91 80182 82199,Fin,VP,2018-08-23,1992-11-01,female,Bangalore,manager3@company.com,Active,PT,409422
+HR-278,Reyansh Verma,reyansh.verma@company.com,+91 78959 64459,Mktg,VP,2024-11-04,1994-08-05,male,Chennai,manager3@company.com,Active,PT,2380617
+HR-229,Meera Mehta,meera.mehta@company.com,+91 81137 76550,Sales,Director,2022-10-07,1987-03-24,M,Delhi,manager4@company.com,Active,Full-time,1539558
+HR-216,Riya Rao,riya.rao@company.com,+91 98495 34727,Des,Manager,2021-09-15,1997-06-12,F,Mumbai,manager1@company.com,Active,PT,1414045
+HR-559,Kavya Iyer,kavya.iyer@company.com,+91 74984 74923,Engg,Lead,2023-08-24,1997-07-26,female,Chennai,manager3@company.com,Active,FT,572542
+HR-707,Divya Chauhan,divya.chauhan@company.com,+91 83434 95823,Ops,Senior Engineer,2018-08-28,1985-08-17,female,Bangalore,manager1@company.com,Active,Full-time,1056682
+HR-615,Sneha Joshi,sneha.joshi@company.com,+91 93550 73956,Ops,Director,2024-02-21,1997-11-11,M,Chennai,manager2@company.com,Active,Full-time,2699808
+HR-144,Ritika Singh,ritika.singh@company.com,+91 92741 49251,HR,Associate,2018-12-08,1988-02-14,F,Bangalore,manager5@company.com,Active,Full-time,510948
+HR-569,Amit Patel,amit.patel@company.com,+91 95969 33600,Fin,Lead,2019-07-12,1998-09-08,male,Chennai,manager1@company.com,Active,FT,1070935
+HR-590,Reyansh Yadav,reyansh.yadav@company.com,+91 91851 11231,Prod,Analyst,2019-10-16,1993-08-08,F,Mumbai,manager4@company.com,Active,Part-time,2357285
+HR-802,Om Mishra,om.mishra@company.com,+91 84969 49599,Sales,Senior Engineer,2022-06-15,1998-11-10,female,Mumbai,manager1@company.com,Active,PT,1249836
+HR-829,Sneha Kumar,sneha.kumar@company.com,+91 82969 45976,HR,Director,2022-06-19,1994-12-10,Male,Chennai,manager4@company.com,Active,Full-time,393597
+HR-182,Komal Shah,komal.shah@company.com,+91 95148 96400,Fin,Analyst,2019-06-20,1993-04-21,female,Chennai,manager3@company.com,Active,Full-time,1003423
+HR-251,Dev Patel,dev.patel@company.com,+91 94493 64460,Fin,VP,2020-10-02,1987-03-24,M,Mumbai,manager1@company.com,Active,FT,1103227
+HR-381,Ishaan Mishra,ishaan.mishra@company.com,+91 96353 25095,Ops,Associate,2020-03-27,1994-08-27,female,Mumbai,manager5@company.com,Active,Full-time,2397302
+HR-699,Shaurya Verma,shaurya.verma@company.com,+91 92047 98125,Prod,Lead,2018-07-03,1988-09-09,F,Mumbai,manager5@company.com,Active,PT,1542927
+HR-432,Dev Chopra,dev.chopra@company.com,+91 90820 70852,Mktg,Analyst,2022-01-16,1992-06-18,female,Hyderabad,manager4@company.com,Active,PT,1695778
+HR-643,Krishna Gupta,krishna.gupta@company.com,+91 82157 97881,Engg,Software Engineer,2018-08-10,1989-04-04,F,Delhi,manager3@company.com,Active,PT,2675200

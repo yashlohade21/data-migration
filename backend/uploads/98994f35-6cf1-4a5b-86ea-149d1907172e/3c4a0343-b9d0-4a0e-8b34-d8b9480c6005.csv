@@ -1,0 +1,21 @@
+contractor_id,name,email_address,start_date,department,role,hourly_rate,location,phone
+CTR-947,Divya Yadav,divya.yadav@company.com,"Dec 26, 2018",Product,Senior Engineer,4215,Delhi,+91 99100 39949
+CTR-669,Amit Iyer,amit.iyer@company.com,"Mar 12, 2023",Operations,Associate,991,Hyderabad,+91 84151 22656
+CTR-258,Rahul Kumar,rahul.kumar@company.com,"Nov 28, 2024",Product,Lead,4450,,
+CTR-379,Anjali Chopra,anjali.chopra@company.com,"Apr 19, 2024",Marketing,Associate,3031,Chennai,
+CTR-419,Ananya Gupta,ananya.gupta@company.com,"Dec 05, 2023",Product,Senior Engineer,3157,Delhi,+91 84865 54681
+CTR-524,Reyansh Patel,reyansh.patel@company.com,"Oct 25, 2018",Sales,Manager,2737,,+91 83894 73656
+CTR-309,Vikram Iyer,vikram.iyer@company.com,"Nov 22, 2022",Marketing,Associate,2969,Bangalore,+91 82951 88554
+CTR-173,Nia Joshi,nia.joshi@company.com,"Jan 04, 2021",Finance,Lead,3752,Delhi,
+CTR-920,Vivaan Mehta,vivaan.mehta@company.com,"Jul 19, 2022",Marketing,Lead,4269,Hyderabad,+91 83272 12733
+CTR-178,Reyansh Iyer,reyansh.iyer@company.com,"Oct 14, 2021",Marketing,Analyst,4681,Chennai,+91 81125 39041
+CTR-891,Diya Chopra,diya.chopra@company.com,"Feb 08, 2019",Operations,Manager,4547,Bangalore,+91 94910 95918
+CTR-417,Tanvi Mehta,tanvi.mehta@company.com,"Aug 05, 2018",Operations,Lead,4282,Pune,
+CTR-613,Riya Singh,riya.singh@company.com,"Oct 15, 2022",Marketing,Director,1735,Pune,+91 91359 34672
+CTR-795,Rahul Singh,rahul.singh@company.com,"Dec 08, 2021",Sales,Software Engineer,928,Mumbai,+91 79269 60779
+CTR-417,Arjun Malhotra,arjun.malhotra@company.com,"May 10, 2023",Marketing,Director,3710,,+91 89095 96980
+CTR-471,Reyansh Rao,reyansh.rao@company.com,"Mar 27, 2023",Product,Lead,3030,,
+CTR-257,Mira Shah,mira.shah@company.com,"Mar 05, 2018",Human Resources,Analyst,1829,,+91 98717 91006
+CTR-416,Ritika Reddy,ritika.reddy@company.com,"Jun 14, 2023",Design,Software Engineer,4342,Mumbai,
+CTR-153,Om Chauhan,om.chauhan@company.com,"May 25, 2024",Design,VP,4436,Bangalore,+91 96255 89254
+CTR-127,Ayaan Das,ayaan.das@company.com,"Mar 03, 2020",Marketing,Associate,3898,,+91 99835 39102

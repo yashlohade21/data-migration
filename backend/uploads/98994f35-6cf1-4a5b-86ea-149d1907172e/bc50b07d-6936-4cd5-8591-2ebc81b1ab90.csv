@@ -1,0 +1,51 @@
+emp_code,fname,lname,email_id,contact_no,dept_name,role,joining_dt,birth_dt,sex,city,mgr_email,type,annual_ctc
+EMP2524,Dev,Kumar,dev.kumar@company.com,+91 71041 13905,Engineering,Associate,08/04/2019,24/02/1987,male,Delhi,manager3@company.com,FT,792986
+EMP4630,Kavya,Das,kavya.das@company.com,+91 79115 10851,Engineering,Analyst,23/11/2023,18/07/1992,F,Pune,manager4@company.com,PT,1069659
+EMP4986,Rahul,Joshi,rahul.joshi@company.com,+91 89782 44671,Sales,Analyst,25/06/2018,03/07/1988,M,Mumbai,manager3@company.com,PT,582244
+EMP7046,Pallavi,Kumar,pallavi.kumar@company.com,+91 93087 19116,Product,Senior Engineer,18/05/2024,21/10/1996,male,Bangalore,manager4@company.com,FT,592201
+EMP9698,Mira,Rao,mira.rao@company.com,+91 81641 37460,Marketing,Analyst,28/02/2021,09/08/1996,Female,Mumbai,manager3@company.com,Full-time,1519786
+EMP7971,Komal,Reddy,komal.reddy@company.com,+91 97618 17331,Human Resources,Manager,15/07/2020,21/12/1992,female,Mumbai,manager5@company.com,Full-time,1360697
+EMP6419,Amit,Desai,amit.desai@company.com,+91 85035 28726,Finance,Senior Engineer,07/10/2023,11/04/2000,F,Chennai,manager3@company.com,FT,1510987
+EMP8434,Meera,Mishra,meera.mishra@company.com,+91 98216 24371,Finance,Director,19/07/2020,08/03/2000,Male,Hyderabad,manager3@company.com,FT,1041062
+EMP6023,Om,Iyer,om.iyer@company.com,+91 73753 99353,Marketing,Director,13/10/2021,17/05/1985,female,Chennai,manager3@company.com,Part-time,2652216
+EMP4777,Mira,Malhotra,mira.malhotra@company.com,+91 86635 23947,Marketing,Associate,14/03/2021,01/12/1993,male,Bangalore,manager1@company.com,FT,1651768
+EMP4155,Shaurya,Chopra,shaurya.chopra@company.com,+91 71898 41571,Sales,Software Engineer,20/06/2021,01/02/1996,M,Bangalore,manager3@company.com,Full-time,2779667
+EMP2958,Reyansh,Shah,reyansh.shah@company.com,+91 83865 37760,Marketing,Manager,05/11/2021,18/03/1993,male,Pune,manager5@company.com,FT,2661971
+EMP4033,Zara,Rao,zara.rao@company.com,+91 70689 87110,Product,Lead,15/09/2021,04/04/1992,Male,Mumbai,manager2@company.com,FT,2723315
+EMP4545,Tanvi,Verma,tanvi.verma@company.com,+91 86847 41195,Engineering,Senior Engineer,23/11/2018,08/02/1986,M,Hyderabad,manager4@company.com,PT,1568018
+EMP5530,Isha,Mishra,isha.mishra@company.com,+91 84124 56438,Sales,VP,08/08/2024,14/04/1988,Male,Chennai,manager5@company.com,PT,2176617
+EMP9595,Nikhil,Patel,nikhil.patel@company.com,+91 87573 68800,Marketing,Software Engineer,13/12/2020,26/02/1992,Female,Bangalore,manager5@company.com,PT,987967
+EMP5636,Ananya,Joshi,ananya.joshi@company.com,+91 87713 11934,Design,Analyst,28/02/2021,26/09/1988,Male,Chennai,manager1@company.com,FT,791172
+EMP4180,Priya,Iyer,priya.iyer@company.com,+91 95692 69638,Design,VP,07/07/2018,06/07/1985,F,Mumbai,manager3@company.com,PT,1596421
+EMP4727,Yash,Mishra,yash.mishra@company.com,+91 71873 16572,Design,Manager,07/05/2019,02/10/1986,female,Mumbai,manager3@company.com,PT,2850218
+EMP3939,Divya,Das,divya.das@company.com,+91 83230 25713,Sales,Software Engineer,17/02/2024,06/02/1987,female,Bangalore,manager3@company.com,FT,2789391
+EMP1231,Tanvi,Yadav,tanvi.yadav@company.com,+91 91945 51180,Engineering,Senior Engineer,14/11/2022,19/09/1995,M,Bangalore,manager5@company.com,Part-time,1401121
+EMP3073,Rajesh,Gupta,rajesh.gupta@company.com,+91 76984 76307,Finance,VP,11/02/2018,15/10/1988,Male,Pune,manager3@company.com,FT,1512331
+EMP1745,Vikram,Singh,vikram.singh@company.com,+91 87332 11025,Human Resources,Lead,10/03/2021,27/09/1994,male,Chennai,manager1@company.com,Part-time,2726170
+EMP5786,Jay,Kumar,jay.kumar@company.com,+91 76901 54942,Sales,Associate,04/02/2023,18/03/1993,M,Pune,manager2@company.com,Part-time,1253949
+EMP9042,Divya,Shah,divya.shah@company.com,+91 95268 27146,Finance,Software Engineer,03/11/2021,27/05/1986,Male,Mumbai,manager1@company.com,FT,1498720
+EMP1200,Sara,Mehta,sara.mehta@company.com,+91 88105 29410,Product,Software Engineer,04/02/2023,05/09/1986,M,Pune,manager5@company.com,FT,2202656
+EMP5658,Aditya,Rao,aditya.rao@company.com,+91 98971 63264,Operations,Software Engineer,12/04/2023,08/11/1988,M,Pune,manager4@company.com,FT,1048243
+EMP8843,Priya,Reddy,priya.reddy@company.com,+91 95800 24168,Product,Software Engineer,06/12/2020,26/07/1992,M,Bangalore,manager4@company.com,Full-time,2004496
+EMP6582,Sneha,Verma,sneha.verma@company.com,+91 76328 62227,Human Resources,VP,12/05/2024,26/04/1992,Male,Chennai,manager2@company.com,Part-time,1776830
+EMP1841,Arjun,Joshi,arjun.joshi@company.com,+91 78698 15014,Operations,Director,22/09/2020,01/02/1993,Female,Pune,manager3@company.com,PT,854673
+EMP8827,Vikram,Malhotra,vikram.malhotra@company.com,+91 96427 80575,Product,Senior Engineer,13/10/2019,09/01/1998,Male,Pune,manager1@company.com,Part-time,1226425
+EMP2070,Karan,Singh,karan.singh@company.com,+91 80688 62743,Operations,Lead,22/02/2023,10/09/1994,female,Delhi,manager4@company.com,FT,1640067
+EMP9056,Diya,Iyer,diya.iyer@company.com,+91 76887 66346,Product,Manager,20/10/2020,13/09/1985,M,Mumbai,manager1@company.com,Part-time,2832632
+EMP1878,Nikhil,Mehta,nikhil.mehta@company.com,+91 79299 77561,Design,Analyst,17/08/2024,26/12/1990,female,Hyderabad,manager2@company.com,Part-time,2997368
+EMP3444,Reyansh,Verma,reyansh.verma@company.com,+91 97844 19545,Finance,Analyst,26/04/2019,01/01/1992,F,Pune,manager5@company.com,PT,2310153
+EMP5978,Dev,Chauhan,dev.chauhan@company.com,+91 77170 33053,Human Resources,Director,16/07/2019,05/11/1985,Male,Delhi,manager1@company.com,PT,2572472
+EMP5066,Sai,Mishra,sai.mishra@company.com,+91 96706 76162,Human Resources,Senior Engineer,15/03/2024,15/11/1995,F,Pune,manager1@company.com,PT,2189880
+EMP7818,Priya,Shah,priya.shah@company.com,+91 78998 67654,Design,Associate,25/04/2024,21/05/2000,female,Bangalore,manager5@company.com,Part-time,724988
+EMP4697,Meera,Joshi,meera.joshi@company.com,+91 93147 38043,Operations,Lead,18/02/2019,05/04/1997,female,Bangalore,manager5@company.com,PT,669395
+EMP7232,Manoj,Malhotra,manoj.malhotra@company.com,+91 85629 10772,Design,Director,02/04/2024,14/07/1985,male,Delhi,manager4@company.com,Part-time,1875383
+EMP8253,Nia,Desai,nia.desai@company.com,+91 91917 99016,Product,Analyst,16/04/2020,14/08/1985,F,Mumbai,manager3@company.com,FT,2095827
+EMP8025,Nikhil,Gupta,nikhil.gupta@company.com,+91 75954 16590,Engineering,Director,19/10/2023,01/02/1998,Female,Delhi,manager3@company.com,PT,1491174
+EMP1986,Amit,Nair,amit.nair@company.com,+91 70635 80702,Design,Lead,11/07/2020,25/07/1993,Male,Delhi,manager5@company.com,Part-time,618462
+EMP2625,Kavya,Singh,kavya.singh@company.com,+91 85517 97747,Engineering,Software Engineer,08/04/2024,01/10/1989,Female,Bangalore,manager2@company.com,FT,879784
+EMP4457,Nikhil,Joshi,nikhil.joshi@company.com,+91 88962 13365,Operations,Manager,20/10/2023,23/02/1990,M,Hyderabad,manager3@company.com,PT,1708443
+EMP2330,Rajesh,Nair,rajesh.nair@company.com,+91 81377 79827,Marketing,Analyst,04/12/2024,10/11/1988,male,Hyderabad,manager2@company.com,Part-time,2196747
+EMP4929,Arjun,Das,arjun.das@company.com,+91 99215 70258,Operations,Software Engineer,28/07/2024,16/02/1998,M,Chennai,manager2@company.com,PT,1041691
+EMP2229,Ananya,Das,ananya.das@company.com,+91 97221 21359,Finance,VP,15/07/2024,24/10/1993,M,Bangalore,manager2@company.com,PT,1569909
+EMP1043,Meera,Mehta,meera.mehta@company.com,+91 96143 43862,Product,Lead,01/08/2024,11/03/2000,Female,Mumbai,manager4@company.com,Part-time,1827484
+EMP8381,Komal,Joshi,komal.joshi@company.com,+91 91164 74332,Engineering,Analyst,03/04/2023,14/08/1992,female,Delhi,manager5@company.com,Full-time,2279780

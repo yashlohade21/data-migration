@@ -1,0 +1,185 @@
+{
+  "version": 1,
+  "origin": "http://localhost:3000",
+  "updated_at": "2026-09-18T15:45:05.680Z",
+  "nodes": {
+    "/": {
+      "key": "/",
+      "url": "http://localhost:3000/",
+      "visits": 3,
+      "first_seen": "2026-09-18T15:32:48.203Z",
+      "last_seen": "2026-09-18T15:45:05.063Z",
+      "title": "Migration Agent",
+      "heading": "Data Migration Agent",
+      "landmarks": {
+        "table": false,
+        "buttons": [
+          "Create"
+        ]
+      },
+      "role": "dashboard"
+    },
+    "/session/c4d76407-6c2c-48a1-a27e-7183ee732439/upload": {
+      "key": "/session/c4d76407-6c2c-48a1-a27e-7183ee732439/upload",
+      "url": "http://localhost:3000/session/c4d76407-6c2c-48a1-a27e-7183ee732439/upload",
+      "visits": 2,
+      "first_seen": "2026-09-18T15:33:26.867Z",
+      "last_seen": "2026-09-18T15:35:56.230Z",
+      "title": "Migration Agent",
+      "heading": "E2E Verification Test",
+      "landmarks": {
+        "table": false,
+        "buttons": []
+      },
+      "role": "other"
+    },
+    "/session/c4d76407-6c2c-48a1-a27e-7183ee732439/review": {
+      "key": "/session/c4d76407-6c2c-48a1-a27e-7183ee732439/review",
+      "url": "http://localhost:3000/session/c4d76407-6c2c-48a1-a27e-7183ee732439/review",
+      "visits": 4,
+      "first_seen": "2026-09-18T15:35:56.230Z",
+      "last_seen": "2026-09-18T15:41:02.063Z",
+      "title": "Migration Agent",
+      "heading": "E2E Verification Test",
+      "landmarks": {
+        "table": false,
+        "buttons": [
+          "Escalations2",
+          "Data (100)",
+          "All Decisions"
+        ]
+      },
+      "role": "other"
+    },
+    "/session/c4d76407-6c2c-48a1-a27e-7183ee732439/mapping": {
+      "key": "/session/c4d76407-6c2c-48a1-a27e-7183ee732439/mapping",
+      "url": "http://localhost:3000/session/c4d76407-6c2c-48a1-a27e-7183ee732439/mapping",
+      "visits": 2,
+      "first_seen": "2026-09-18T15:36:04.772Z",
+      "last_seen": "2026-09-18T15:36:26.928Z",
+      "title": "Migration Agent",
+      "heading": "E2E Verification Test",
+      "landmarks": {
+        "table": true,
+        "buttons": [
+          "All (43)",
+          "Needs Review (5)",
+          "Auto (36)",
+          "Escalated (2)"
+        ]
+      },
+      "role": "list"
+    },
+    "/session/c4d76407-6c2c-48a1-a27e-7183ee732439/push": {
+      "key": "/session/c4d76407-6c2c-48a1-a27e-7183ee732439/push",
+      "url": "http://localhost:3000/session/c4d76407-6c2c-48a1-a27e-7183ee732439/push",
+      "visits": 3,
+      "first_seen": "2026-09-18T15:41:02.063Z",
+      "last_seen": "2026-09-18T15:44:48.681Z",
+      "title": "Migration Agent",
+      "heading": "E2E Verification Test",
+      "landmarks": {
+        "table": true,
+        "buttons": [
+          "Push",
+          "Records (89)",
+          "Delta Report",
+          "First",
+          "Last"
+        ]
+      },
+      "role": "list"
+    },
+    "/session/c4d76407-6c2c-48a1-a27e-7183ee732439/audit": {
+      "key": "/session/c4d76407-6c2c-48a1-a27e-7183ee732439/audit",
+      "url": "http://localhost:3000/session/c4d76407-6c2c-48a1-a27e-7183ee732439/audit",
+      "visits": 2,
+      "first_seen": "2026-09-18T15:43:40.162Z",
+      "last_seen": "2026-09-18T15:44:48.681Z",
+      "title": "Migration Agent",
+      "heading": "E2E Verification Test",
+      "landmarks": {
+        "table": false,
+        "buttons": []
+      },
+      "role": "other"
+    }
+  },
+  "edges": {
+    "/ /session/c4d76407-6c2c-48a1-a27e-7183ee732439/upload click\u0001Create\u0001\u0001": {
+      "from": "/",
+      "to": "/session/c4d76407-6c2c-48a1-a27e-7183ee732439/upload",
+      "via": {
+        "tool": "click",
+        "locator": {
+          "text": "Create"
+        }
+      },
+      "scope": "local",
+      "source": "observed",
+      "count": 1,
+      "first_seen": "2026-09-18T15:33:26.867Z",
+      "last_used": "2026-09-18T15:33:26.867Z"
+    },
+    "* /session/c4d76407-6c2c-48a1-a27e-7183ee732439/mapping click\u0001Mapping\u0001\u0001": {
+      "from": "*",
+      "to": "/session/c4d76407-6c2c-48a1-a27e-7183ee732439/mapping",
+      "via": {
+        "tool": "click",
+        "locator": {
+          "text": "Mapping"
+        }
+      },
+      "scope": "global",
+      "source": "observed",
+      "count": 1,
+      "first_seen": "2026-09-18T15:36:04.772Z",
+      "last_used": "2026-09-18T15:36:04.772Z"
+    },
+    "* /session/c4d76407-6c2c-48a1-a27e-7183ee732439/review click\u0001Review\u0001\u0001": {
+      "from": "*",
+      "to": "/session/c4d76407-6c2c-48a1-a27e-7183ee732439/review",
+      "via": {
+        "tool": "click",
+        "locator": {
+          "text": "Review"
+        }
+      },
+      "scope": "global",
+      "source": "observed",
+      "count": 1,
+      "first_seen": "2026-09-18T15:36:26.928Z",
+      "last_used": "2026-09-18T15:36:26.928Z"
+    },
+    "* /session/c4d76407-6c2c-48a1-a27e-7183ee732439/audit click\u0001Audit\u0001\u0001": {
+      "from": "*",
+      "to": "/session/c4d76407-6c2c-48a1-a27e-7183ee732439/audit",
+      "via": {
+        "tool": "click",
+        "locator": {
+          "text": "Audit"
+        }
+      },
+      "scope": "global",
+      "source": "observed",
+      "count": 1,
+      "first_seen": "2026-09-18T15:43:40.162Z",
+      "last_used": "2026-09-18T15:43:40.162Z"
+    },
+    "* /session/c4d76407-6c2c-48a1-a27e-7183ee732439/push click\u0001Records (89)\u0001\u0001": {
+      "from": "*",
+      "to": "/session/c4d76407-6c2c-48a1-a27e-7183ee732439/push",
+      "via": {
+        "tool": "click",
+        "locator": {
+          "text": "Records (89)"
+        }
+      },
+      "scope": "global",
+      "source": "observed",
+      "count": 1,
+      "first_seen": "2026-09-18T15:44:48.681Z",
+      "last_used": "2026-09-18T15:44:48.681Z"
+    }
+  }
+}

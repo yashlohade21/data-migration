@@ -1,0 +1,6 @@
+Full Name,Email ID,Mobile,Dept,Role,Join Date,DOB,Gender,Office,Type,EID
+John Smith,john@acme.com,+1-555-0101,Engineering,Senior Developer,2024-01-15,1990-03-25,Male,NYC,Full-time,EMP001
+Jane Doe,jane@acme.com,+1-555-0102,Sales,VP Sales,2023-06-01,1988-07-12,Female,SF,Full-time,EMP002
+Bob Wilson,bob@acme.com,+1-555-0103,Mktg,Marketing Manager,15/03/2024,1992-11-30,Male,London,Contract,EMP003
+Alice Brown,alice@acme.com,+1-555-0104,HR,HR Specialist,2024-02-28,1995-01-08,Female,NYC,Full-time,EMP004
+Charlie Lee,charlie@acme.com,+1-555-0105,Eng,DevOps Lead,01-04-2024,1991-09-15,Male,Remote,Full-time,EMP005
