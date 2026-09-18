@@ -59,6 +59,7 @@ async def upload_files(session_id: str, files: list[UploadFile] = File(...), db:
             columns=columns,
         )
         db.add(uploaded)
+        db.flush()
 
         # Create raw migration records
         for idx, row in df.iterrows():
