@@ -26,13 +26,21 @@ export default function ReviewPage({ params }: { params: Promise<{ id: string }>
 
   const loadData = async () => {
     try {
-      const [esc, recs, session, maps] = await Promise.all([
-        api.getEscalations(id), api.getRecords(id, 100), api.getSession(id), api.getMappings(id),
+      const [esc, recs, session, maps, audit] = await Promise.all([
+        api.getEscalations(id), api.getRecords(id, 100), api.getSession(id), api.getMappings(id), api.getAudit(id),
       ]);
       setEscalations(esc);
       setRecords(recs);
       setSessionStatus(session.status);
       setAllMappings(maps);
+      // Load audit log as initial agent log events if no SSE events yet
+      if (sse.events.length === 0 && audit.length > 0) {
+        const auditEvents = audit.map((a: { action: string; phase: string; details: Record<string, unknown> }) => ({
+          event: "log" as const,
+          data: { message: `[${a.phase || "agent"}] ${a.action.replace(/_/g, " ")}${a.details && Object.keys(a.details).length > 0 ? " — " + Object.entries(a.details).map(([k, v]) => `${k}: ${v}`).join(", ") : ""}` },
+        }));
+        sse.setInitialEvents(auditEvents);
+      }
     } catch (e: unknown) {
       setError(e instanceof Error ? e.message : "Failed to load data");
     } finally {

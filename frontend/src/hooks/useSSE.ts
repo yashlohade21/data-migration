@@ -93,5 +93,9 @@ export function useSSE(sessionId: string | null) {
     };
   }, [cleanup]);
 
-  return { events, connected, reconnecting, connect, disconnect, clearEvents: () => setEvents([]) };
+  const setInitialEvents = useCallback((initial: SSEEvent[]) => {
+    setEvents((prev) => prev.length === 0 ? initial : prev);
+  }, []);
+
+  return { events, connected, reconnecting, connect, disconnect, clearEvents: () => setEvents([]), setInitialEvents };
 }
