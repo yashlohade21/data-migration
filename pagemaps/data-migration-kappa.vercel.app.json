@@ -1,0 +1,464 @@
+{
+  "version": 1,
+  "origin": "https://data-migration-kappa.vercel.app",
+  "updated_at": "2026-09-19T05:16:14.831Z",
+  "nodes": {
+    "/": {
+      "key": "/",
+      "url": "https://data-migration-kappa.vercel.app/",
+      "visits": 12,
+      "first_seen": "2026-09-18T17:53:00.534Z",
+      "last_seen": "2026-09-19T05:16:14.200Z",
+      "title": "Migration Agent — AI-Powered HR Data Migration",
+      "heading": "Data Migration Agent",
+      "landmarks": {
+        "table": false,
+        "buttons": [
+          "Create"
+        ]
+      },
+      "role": "dashboard"
+    },
+    "/session/ae00cf0a-7a9a-4fa1-a759-ad90bf8a538c/upload": {
+      "key": "/session/ae00cf0a-7a9a-4fa1-a759-ad90bf8a538c/upload",
+      "url": "https://data-migration-kappa.vercel.app/session/ae00cf0a-7a9a-4fa1-a759-ad90bf8a538c/upload",
+      "visits": 1,
+      "first_seen": "2026-09-18T18:00:14.545Z",
+      "last_seen": "2026-09-18T18:00:22.997Z",
+      "title": "Migration Agent",
+      "landmarks": {
+        "table": false,
+        "buttons": []
+      },
+      "role": "other"
+    },
+    "/session/0495342a-977c-4dcb-8c8a-bd8963eadda9/upload": {
+      "key": "/session/0495342a-977c-4dcb-8c8a-bd8963eadda9/upload",
+      "url": "https://data-migration-kappa.vercel.app/session/0495342a-977c-4dcb-8c8a-bd8963eadda9/upload",
+      "visits": 2,
+      "first_seen": "2026-09-18T18:00:59.907Z",
+      "last_seen": "2026-09-18T18:01:06.728Z",
+      "title": "Migration Agent",
+      "heading": "Demo Migration",
+      "landmarks": {
+        "table": false,
+        "buttons": []
+      },
+      "role": "other"
+    },
+    "/session/0495342a-977c-4dcb-8c8a-bd8963eadda9/mapping": {
+      "key": "/session/0495342a-977c-4dcb-8c8a-bd8963eadda9/mapping",
+      "url": "https://data-migration-kappa.vercel.app/session/0495342a-977c-4dcb-8c8a-bd8963eadda9/mapping",
+      "visits": 2,
+      "first_seen": "2026-09-18T18:01:06.728Z",
+      "last_seen": "2026-09-18T18:01:20.035Z",
+      "title": "Migration Agent",
+      "heading": "Demo Migration",
+      "landmarks": {
+        "table": false,
+        "buttons": []
+      },
+      "role": "other"
+    },
+    "/session/0495342a-977c-4dcb-8c8a-bd8963eadda9/review": {
+      "key": "/session/0495342a-977c-4dcb-8c8a-bd8963eadda9/review",
+      "url": "https://data-migration-kappa.vercel.app/session/0495342a-977c-4dcb-8c8a-bd8963eadda9/review",
+      "visits": 2,
+      "first_seen": "2026-09-18T18:01:20.035Z",
+      "last_seen": "2026-09-18T18:01:29.565Z",
+      "title": "Migration Agent",
+      "heading": "Demo Migration",
+      "landmarks": {
+        "table": false,
+        "buttons": []
+      },
+      "role": "other"
+    },
+    "/session/0495342a-977c-4dcb-8c8a-bd8963eadda9/push": {
+      "key": "/session/0495342a-977c-4dcb-8c8a-bd8963eadda9/push",
+      "url": "https://data-migration-kappa.vercel.app/session/0495342a-977c-4dcb-8c8a-bd8963eadda9/push",
+      "visits": 2,
+      "first_seen": "2026-09-18T18:01:29.565Z",
+      "last_seen": "2026-09-18T18:01:48.944Z",
+      "title": "Migration Agent",
+      "heading": "Demo Migration",
+      "landmarks": {
+        "table": false,
+        "buttons": [
+          "Push",
+          "Records (0)",
+          "Delta Report",
+          "Push to Target System"
+        ]
+      },
+      "role": "other"
+    },
+    "/session/0495342a-977c-4dcb-8c8a-bd8963eadda9/audit": {
+      "key": "/session/0495342a-977c-4dcb-8c8a-bd8963eadda9/audit",
+      "url": "https://data-migration-kappa.vercel.app/session/0495342a-977c-4dcb-8c8a-bd8963eadda9/audit",
+      "visits": 1,
+      "first_seen": "2026-09-18T18:01:48.944Z",
+      "last_seen": "2026-09-18T18:01:48.944Z",
+      "title": "Migration Agent",
+      "heading": "Demo Migration",
+      "landmarks": {
+        "table": false,
+        "buttons": []
+      },
+      "role": "other"
+    },
+    "/session/4757427f-52f0-44fe-a394-ecab8fb68733/upload": {
+      "key": "/session/4757427f-52f0-44fe-a394-ecab8fb68733/upload",
+      "url": "https://data-migration-kappa.vercel.app/session/4757427f-52f0-44fe-a394-ecab8fb68733/upload",
+      "visits": 1,
+      "first_seen": "2026-09-18T18:46:29.810Z",
+      "last_seen": "2026-09-18T18:46:29.810Z",
+      "title": "Migration Agent — AI-Powered HR Data Migration",
+      "heading": "E2E Test Session",
+      "landmarks": {
+        "table": false,
+        "buttons": []
+      },
+      "role": "other"
+    },
+    "/session/cebed6e4-f977-4b8a-99d9-0f9c70c4c09d/upload": {
+      "key": "/session/cebed6e4-f977-4b8a-99d9-0f9c70c4c09d/upload",
+      "url": "https://data-migration-kappa.vercel.app/session/cebed6e4-f977-4b8a-99d9-0f9c70c4c09d/upload",
+      "visits": 2,
+      "first_seen": "2026-09-18T19:04:06.766Z",
+      "last_seen": "2026-09-18T19:07:54.606Z",
+      "title": "Migration Agent — AI-Powered HR Data Migration",
+      "heading": "Browser E2E Test",
+      "landmarks": {
+        "table": false,
+        "buttons": []
+      },
+      "role": "other"
+    },
+    "/session/cebed6e4-f977-4b8a-99d9-0f9c70c4c09d/mapping": {
+      "key": "/session/cebed6e4-f977-4b8a-99d9-0f9c70c4c09d/mapping",
+      "url": "https://data-migration-kappa.vercel.app/session/cebed6e4-f977-4b8a-99d9-0f9c70c4c09d/mapping",
+      "visits": 2,
+      "first_seen": "2026-09-18T19:07:54.606Z",
+      "last_seen": "2026-09-18T19:08:16.851Z",
+      "title": "Migration Agent — AI-Powered HR Data Migration",
+      "heading": "Browser E2E Test",
+      "landmarks": {
+        "table": false,
+        "buttons": []
+      },
+      "role": "other"
+    },
+    "/session/cebed6e4-f977-4b8a-99d9-0f9c70c4c09d/review": {
+      "key": "/session/cebed6e4-f977-4b8a-99d9-0f9c70c4c09d/review",
+      "url": "https://data-migration-kappa.vercel.app/session/cebed6e4-f977-4b8a-99d9-0f9c70c4c09d/review",
+      "visits": 1,
+      "first_seen": "2026-09-18T19:08:16.851Z",
+      "last_seen": "2026-09-18T19:08:16.851Z",
+      "role": "other"
+    },
+    "/session/cebed6e4-f977-4b8a-99d9-0f9c70c4c09d/push": {
+      "key": "/session/cebed6e4-f977-4b8a-99d9-0f9c70c4c09d/push",
+      "url": "https://data-migration-kappa.vercel.app/session/cebed6e4-f977-4b8a-99d9-0f9c70c4c09d/push",
+      "visits": 1,
+      "first_seen": "2026-09-18T19:08:16.851Z",
+      "last_seen": "2026-09-18T19:08:16.851Z",
+      "role": "other"
+    },
+    "/session/cebed6e4-f977-4b8a-99d9-0f9c70c4c09d/audit": {
+      "key": "/session/cebed6e4-f977-4b8a-99d9-0f9c70c4c09d/audit",
+      "url": "https://data-migration-kappa.vercel.app/session/cebed6e4-f977-4b8a-99d9-0f9c70c4c09d/audit",
+      "visits": 1,
+      "first_seen": "2026-09-18T19:08:16.851Z",
+      "last_seen": "2026-09-18T19:08:16.851Z",
+      "title": "Migration Agent — AI-Powered HR Data Migration",
+      "heading": "Browser E2E Test",
+      "landmarks": {
+        "table": false,
+        "buttons": []
+      },
+      "role": "other"
+    },
+    "/session/09eabde9-e685-49e1-9e72-ba671a24d761/upload": {
+      "key": "/session/09eabde9-e685-49e1-9e72-ba671a24d761/upload",
+      "url": "https://data-migration-kappa.vercel.app/session/09eabde9-e685-49e1-9e72-ba671a24d761/upload",
+      "visits": 2,
+      "first_seen": "2026-09-19T05:13:55.920Z",
+      "last_seen": "2026-09-19T05:15:22.027Z",
+      "title": "Migration Agent — AI-Powered HR Data Migration",
+      "heading": "Final Design Test",
+      "landmarks": {
+        "table": false,
+        "buttons": []
+      },
+      "role": "other"
+    },
+    "/session/09eabde9-e685-49e1-9e72-ba671a24d761/mapping": {
+      "key": "/session/09eabde9-e685-49e1-9e72-ba671a24d761/mapping",
+      "url": "https://data-migration-kappa.vercel.app/session/09eabde9-e685-49e1-9e72-ba671a24d761/mapping",
+      "visits": 2,
+      "first_seen": "2026-09-19T05:15:22.027Z",
+      "last_seen": "2026-09-19T05:15:35.936Z",
+      "title": "Migration Agent — AI-Powered HR Data Migration",
+      "heading": "Final Design Test",
+      "landmarks": {
+        "table": false,
+        "buttons": []
+      },
+      "role": "other"
+    },
+    "/session/09eabde9-e685-49e1-9e72-ba671a24d761/push": {
+      "key": "/session/09eabde9-e685-49e1-9e72-ba671a24d761/push",
+      "url": "https://data-migration-kappa.vercel.app/session/09eabde9-e685-49e1-9e72-ba671a24d761/push",
+      "visits": 2,
+      "first_seen": "2026-09-19T05:15:35.936Z",
+      "last_seen": "2026-09-19T05:15:46.033Z",
+      "title": "Migration Agent — AI-Powered HR Data Migration",
+      "heading": "Final Design Test",
+      "landmarks": {
+        "table": false,
+        "buttons": [
+          "Push",
+          "Records (0)",
+          "Delta Report",
+          "Push to Target System"
+        ]
+      },
+      "role": "other"
+    },
+    "/session/09eabde9-e685-49e1-9e72-ba671a24d761/audit": {
+      "key": "/session/09eabde9-e685-49e1-9e72-ba671a24d761/audit",
+      "url": "https://data-migration-kappa.vercel.app/session/09eabde9-e685-49e1-9e72-ba671a24d761/audit",
+      "visits": 2,
+      "first_seen": "2026-09-19T05:15:46.033Z",
+      "last_seen": "2026-09-19T05:15:55.849Z",
+      "title": "Migration Agent — AI-Powered HR Data Migration",
+      "heading": "Final Design Test",
+      "landmarks": {
+        "table": false,
+        "buttons": []
+      },
+      "role": "other"
+    },
+    "/session/09eabde9-e685-49e1-9e72-ba671a24d761/review": {
+      "key": "/session/09eabde9-e685-49e1-9e72-ba671a24d761/review",
+      "url": "https://data-migration-kappa.vercel.app/session/09eabde9-e685-49e1-9e72-ba671a24d761/review",
+      "visits": 1,
+      "first_seen": "2026-09-19T05:15:55.849Z",
+      "last_seen": "2026-09-19T05:15:55.849Z",
+      "title": "Migration Agent — AI-Powered HR Data Migration",
+      "heading": "Final Design Test",
+      "landmarks": {
+        "table": false,
+        "buttons": []
+      },
+      "role": "other"
+    }
+  },
+  "edges": {
+    "/ /session/ae00cf0a-7a9a-4fa1-a759-ad90bf8a538c/upload click\u0001Hi\u0001\u0001": {
+      "from": "/",
+      "to": "/session/ae00cf0a-7a9a-4fa1-a759-ad90bf8a538c/upload",
+      "via": {
+        "tool": "click",
+        "locator": {
+          "text": "Hi"
+        }
+      },
+      "scope": "local",
+      "source": "observed",
+      "count": 1,
+      "first_seen": "2026-09-18T18:00:14.545Z",
+      "last_used": "2026-09-18T18:00:14.545Z"
+    },
+    "* /session/0495342a-977c-4dcb-8c8a-bd8963eadda9/mapping click\u0001Mapping\u0001\u0001": {
+      "from": "*",
+      "to": "/session/0495342a-977c-4dcb-8c8a-bd8963eadda9/mapping",
+      "via": {
+        "tool": "click",
+        "locator": {
+          "text": "Mapping"
+        }
+      },
+      "scope": "global",
+      "source": "observed",
+      "count": 1,
+      "first_seen": "2026-09-18T18:01:06.728Z",
+      "last_used": "2026-09-18T18:01:06.728Z"
+    },
+    "* /session/0495342a-977c-4dcb-8c8a-bd8963eadda9/review click\u0001Review\u0001\u0001": {
+      "from": "*",
+      "to": "/session/0495342a-977c-4dcb-8c8a-bd8963eadda9/review",
+      "via": {
+        "tool": "click",
+        "locator": {
+          "text": "Review"
+        }
+      },
+      "scope": "global",
+      "source": "observed",
+      "count": 1,
+      "first_seen": "2026-09-18T18:01:20.035Z",
+      "last_used": "2026-09-18T18:01:20.035Z"
+    },
+    "* /session/0495342a-977c-4dcb-8c8a-bd8963eadda9/push click\u0001Push\u0001\u0001": {
+      "from": "*",
+      "to": "/session/0495342a-977c-4dcb-8c8a-bd8963eadda9/push",
+      "via": {
+        "tool": "click",
+        "locator": {
+          "text": "Push"
+        }
+      },
+      "scope": "global",
+      "source": "observed",
+      "count": 1,
+      "first_seen": "2026-09-18T18:01:29.565Z",
+      "last_used": "2026-09-18T18:01:29.565Z"
+    },
+    "* /session/0495342a-977c-4dcb-8c8a-bd8963eadda9/audit click\u0001Audit\u0001\u0001": {
+      "from": "*",
+      "to": "/session/0495342a-977c-4dcb-8c8a-bd8963eadda9/audit",
+      "via": {
+        "tool": "click",
+        "locator": {
+          "text": "Audit"
+        }
+      },
+      "scope": "global",
+      "source": "observed",
+      "count": 1,
+      "first_seen": "2026-09-18T18:01:48.944Z",
+      "last_used": "2026-09-18T18:01:48.944Z"
+    },
+    "/ /session/cebed6e4-f977-4b8a-99d9-0f9c70c4c09d/upload click\u0001Create\u0001\u0001": {
+      "from": "/",
+      "to": "/session/cebed6e4-f977-4b8a-99d9-0f9c70c4c09d/upload",
+      "via": {
+        "tool": "click",
+        "locator": {
+          "text": "Create"
+        }
+      },
+      "scope": "local",
+      "source": "observed",
+      "count": 1,
+      "first_seen": "2026-09-18T19:04:06.766Z",
+      "last_used": "2026-09-18T19:04:06.766Z"
+    },
+    "* /session/cebed6e4-f977-4b8a-99d9-0f9c70c4c09d/mapping click\u0001Mapping\u0001\u0001": {
+      "from": "*",
+      "to": "/session/cebed6e4-f977-4b8a-99d9-0f9c70c4c09d/mapping",
+      "via": {
+        "tool": "click",
+        "locator": {
+          "text": "Mapping"
+        }
+      },
+      "scope": "global",
+      "source": "observed",
+      "count": 1,
+      "first_seen": "2026-09-18T19:07:54.606Z",
+      "last_used": "2026-09-18T19:07:54.606Z"
+    },
+    "* /session/cebed6e4-f977-4b8a-99d9-0f9c70c4c09d/review click\u0001Audit\u0001\u0001": {
+      "from": "*",
+      "to": "/session/cebed6e4-f977-4b8a-99d9-0f9c70c4c09d/review",
+      "via": {
+        "tool": "click",
+        "locator": {
+          "text": "Audit"
+        }
+      },
+      "scope": "global",
+      "source": "observed",
+      "count": 1,
+      "first_seen": "2026-09-18T19:08:16.851Z",
+      "last_used": "2026-09-18T19:08:16.851Z"
+    },
+    "/session/cebed6e4-f977-4b8a-99d9-0f9c70c4c09d/review /session/cebed6e4-f977-4b8a-99d9-0f9c70c4c09d/push redirect": {
+      "from": "/session/cebed6e4-f977-4b8a-99d9-0f9c70c4c09d/review",
+      "to": "/session/cebed6e4-f977-4b8a-99d9-0f9c70c4c09d/push",
+      "via": {
+        "tool": "redirect"
+      },
+      "scope": "local",
+      "source": "observed",
+      "count": 1,
+      "first_seen": "2026-09-18T19:08:16.851Z",
+      "last_used": "2026-09-18T19:08:16.851Z"
+    },
+    "/session/cebed6e4-f977-4b8a-99d9-0f9c70c4c09d/push /session/cebed6e4-f977-4b8a-99d9-0f9c70c4c09d/audit redirect": {
+      "from": "/session/cebed6e4-f977-4b8a-99d9-0f9c70c4c09d/push",
+      "to": "/session/cebed6e4-f977-4b8a-99d9-0f9c70c4c09d/audit",
+      "via": {
+        "tool": "redirect"
+      },
+      "scope": "local",
+      "source": "observed",
+      "count": 1,
+      "first_seen": "2026-09-18T19:08:16.851Z",
+      "last_used": "2026-09-18T19:08:16.851Z"
+    },
+    "* /session/09eabde9-e685-49e1-9e72-ba671a24d761/mapping click\u0001Mapping\u0001\u0001": {
+      "from": "*",
+      "to": "/session/09eabde9-e685-49e1-9e72-ba671a24d761/mapping",
+      "via": {
+        "tool": "click",
+        "locator": {
+          "text": "Mapping"
+        }
+      },
+      "scope": "global",
+      "source": "observed",
+      "count": 1,
+      "first_seen": "2026-09-19T05:15:22.027Z",
+      "last_used": "2026-09-19T05:15:22.027Z"
+    },
+    "* /session/09eabde9-e685-49e1-9e72-ba671a24d761/push click\u0001Push\u0001\u0001": {
+      "from": "*",
+      "to": "/session/09eabde9-e685-49e1-9e72-ba671a24d761/push",
+      "via": {
+        "tool": "click",
+        "locator": {
+          "text": "Push"
+        }
+      },
+      "scope": "global",
+      "source": "observed",
+      "count": 1,
+      "first_seen": "2026-09-19T05:15:35.936Z",
+      "last_used": "2026-09-19T05:15:35.936Z"
+    },
+    "* /session/09eabde9-e685-49e1-9e72-ba671a24d761/audit click\u0001Audit\u0001\u0001": {
+      "from": "*",
+      "to": "/session/09eabde9-e685-49e1-9e72-ba671a24d761/audit",
+      "via": {
+        "tool": "click",
+        "locator": {
+          "text": "Audit"
+        }
+      },
+      "scope": "global",
+      "source": "observed",
+      "count": 1,
+      "first_seen": "2026-09-19T05:15:46.033Z",
+      "last_used": "2026-09-19T05:15:46.033Z"
+    },
+    "* /session/09eabde9-e685-49e1-9e72-ba671a24d761/review click\u0001Review\u0001\u0001": {
+      "from": "*",
+      "to": "/session/09eabde9-e685-49e1-9e72-ba671a24d761/review",
+      "via": {
+        "tool": "click",
+        "locator": {
+          "text": "Review"
+        }
+      },
+      "scope": "global",
+      "source": "observed",
+      "count": 1,
+      "first_seen": "2026-09-19T05:15:55.849Z",
+      "last_used": "2026-09-19T05:15:55.849Z"
+    }
+  }
+}

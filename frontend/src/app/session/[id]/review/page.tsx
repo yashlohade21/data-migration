@@ -57,8 +57,9 @@ export default function ReviewPage({ params }: { params: Promise<{ id: string }>
   useEffect(() => {
     const last = sse.events[sse.events.length - 1];
     if (last?.event === "awaiting_review") loadData();
-    if (last?.event === "complete") {
-      setTimeout(() => router.push(`/session/${id}/push`), 1200);
+    if (last?.event === "complete" || last?.event === "status" && last?.data?.message?.includes("ready")) {
+      loadData();
+      setTimeout(() => router.push(`/session/${id}/push`), 800);
     }
   }, [sse.events, id, router]);
 
@@ -163,7 +164,7 @@ export default function ReviewPage({ params }: { params: Promise<{ id: string }>
             )}
 
             {/* Resume button */}
-            {pending.length === 0 && resolved.length > 0 && (
+            {pending.length === 0 && (sessionStatus === "awaiting_review" || resolved.length > 0) && (
               <button
                 onClick={resumeAgent}
                 disabled={resuming}

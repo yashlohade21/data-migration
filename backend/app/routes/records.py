@@ -104,14 +104,21 @@ def get_delta_report(session_id: str, db: DBSession = Depends(get_db)):
             "auto_resolved": sum(1 for e in phase_esc if e.status == "auto_resolved"),
         }
 
-    total_decisions = max(ai_actions + human_actions, 1)
-    ai_pct = round((ai_actions / total_decisions) * 100, 1)
-    human_pct = round((human_actions / total_decisions) * 100, 1)
+    # Count actual mapping + escalation decisions for accurate delta
+    total_mapping_decisions = auto_mappings + human_mappings
+    total_escalation_decisions = total_escalations
+    # AI auto = auto-accepted mappings + auto-resolved escalations
+    ai_decided = auto_mappings + ai_auto
+    # Human decided = human mappings + human-resolved escalations
+    human_decided = human_mappings + human_resolved
+    total_decisions = max(ai_decided + human_decided, 1)
+    ai_pct = round((ai_decided / total_decisions) * 100, 1)
+    human_pct = round((human_decided / total_decisions) * 100, 1)
 
     return DeltaReport(
         total_records=total,
-        ai_auto_resolved=ai_actions,
-        human_resolved=human_actions,
+        ai_auto_resolved=ai_decided,
+        human_resolved=human_decided,
         escalation_breakdown={
             "total": total_escalations,
             "by_rule": _count_by_rule(all_esc),

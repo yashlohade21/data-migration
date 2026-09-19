@@ -155,6 +155,13 @@ export default function PushPage({ params }: { params: Promise<{ id: string }> }
                   {retrying ? "Retrying..." : `Retry ${pushResult.failed} Failed`}
                 </button>
               )}
+
+              {pushResult.failed === 0 && (
+                <div className="flex items-center gap-2 text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-xl px-4 py-3">
+                  <CheckCircle2 className="w-5 h-5" />
+                  <span className="text-sm font-medium">All records pushed successfully! View the Delta Report tab for a full breakdown.</span>
+                </div>
+              )}
             </div>
           )}
 

@@ -71,6 +71,18 @@ async def run_agent(session_id: str):
         db.commit()
         logger.info("Agent started for session %s", session_id)
 
+        # Clear stale data from any previous run
+        db.query(Escalation).filter(Escalation.session_id == session_id).delete()
+        db.query(ColumnMapping).filter(ColumnMapping.session_id == session_id).delete()
+        db.query(AuditLog).filter(AuditLog.session_id == session_id).delete()
+        # Reset records to raw state
+        db.query(MigrationRecord).filter(MigrationRecord.session_id == session_id).update({
+            "status": "raw", "mapped_data": None, "cleaned_data": None,
+            "final_data": None, "is_duplicate": 0, "duplicate_of": None,
+            "validation_errors": [], "push_status": None,
+        })
+        db.commit()
+
         await emit(session_id, "status", {"message": "Agent started", "phase": "ingest"})
 
         # Phase 1: Ingest (already done during upload)
