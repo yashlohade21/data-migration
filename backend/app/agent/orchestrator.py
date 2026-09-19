@@ -293,6 +293,8 @@ async def _run_clean_phase(db: DBSession, session_id: str, session):
     # Build mapping lookup per file
     files = db.query(UploadedFile).filter(UploadedFile.session_id == session_id).all()
     escalation_count = 0
+    # Track which (rule, field) combos already escalated to avoid duplicates
+    seen_clean_escalations: set[tuple[str, str]] = set()
 
     for file in files:
         mappings = db.query(ColumnMapping).filter(
@@ -345,20 +347,26 @@ async def _run_clean_phase(db: DBSession, session_id: str, session):
             rec.cleaned_data = cleaned
             rec.status = "cleaned"
 
-            # Check for escalations from cleaning
+            # Check for escalations from cleaning (deduplicate by rule+field)
             for issue in issues:
+                esc_key = (issue["rule"], issue["field"])
+                if esc_key in seen_clean_escalations:
+                    continue  # Already escalated this issue type
+
                 if issue["rule"] == "ambiguous_date":
                     esc_data = evaluate_date_escalation(
                         issue["field"], issue["value"],
                         issue.get("parsed_as", ""), all_dates,
                     )
                     if esc_data:
+                        seen_clean_escalations.add(esc_key)
                         db.add(Escalation(
                             id=gen_id(), session_id=session_id, phase="clean",
                             record_id=rec.id, **esc_data,
                         ))
                         escalation_count += 1
                 elif issue["rule"] == "unknown_enum":
+                    seen_clean_escalations.add(esc_key)
                     db.add(Escalation(
                         id=gen_id(), session_id=session_id, phase="clean",
                         record_id=rec.id,

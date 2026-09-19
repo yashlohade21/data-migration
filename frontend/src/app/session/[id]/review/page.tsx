@@ -60,16 +60,30 @@ export default function ReviewPage({ params }: { params: Promise<{ id: string }>
     }
   };
 
-  useEffect(() => { loadData(); }, [id]);
+  // Load data on mount and auto-connect SSE
+  useEffect(() => {
+    loadData();
+    sse.connect();
+  }, [id]);
 
+  // React to SSE events
   useEffect(() => {
     const last = sse.events[sse.events.length - 1];
-    if (last?.event === "awaiting_review") loadData();
-    if (last?.event === "complete" || last?.event === "status" && last?.data?.message?.includes("ready")) {
+    if (!last) return;
+    if (last.event === "awaiting_review") {
+      loadData();
+    } else if (last.event === "complete" || (last.event === "status" && last.data?.message?.includes("ready"))) {
       loadData();
       setTimeout(() => router.push(`/session/${id}/push`), 800);
     }
   }, [sse.events, id, router]);
+
+  // Poll for updates while agent is processing (fallback if SSE events missed)
+  useEffect(() => {
+    if (sessionStatus !== "processing") return;
+    const interval = setInterval(() => { loadData(); }, 3000);
+    return () => clearInterval(interval);
+  }, [sessionStatus]);
 
   const pending = escalations.filter((e) => e.status === "pending");
   const resolved = escalations.filter((e) => e.status !== "pending");
