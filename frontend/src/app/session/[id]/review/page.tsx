@@ -71,19 +71,19 @@ export default function ReviewPage({ params }: { params: Promise<{ id: string }>
     const last = sse.events[sse.events.length - 1];
     if (!last) return;
     if (last.event === "awaiting_review") {
-      loadData();
+      // Small delay to ensure DB write is visible to read queries
+      setTimeout(() => loadData(), 500);
     } else if (last.event === "complete" || (last.event === "status" && last.data?.message?.includes("ready"))) {
       loadData();
       setTimeout(() => router.push(`/session/${id}/push`), 800);
     }
   }, [sse.events, id, router]);
 
-  // Poll for updates while agent is processing (fallback if SSE events missed)
+  // Always poll for updates while on review page (catches missed SSE events)
   useEffect(() => {
-    if (sessionStatus !== "processing") return;
-    const interval = setInterval(() => { loadData(); }, 3000);
+    const interval = setInterval(() => { loadData(); }, 4000);
     return () => clearInterval(interval);
-  }, [sessionStatus]);
+  }, [id]);
 
   const pending = escalations.filter((e) => e.status === "pending");
   const resolved = escalations.filter((e) => e.status !== "pending");
