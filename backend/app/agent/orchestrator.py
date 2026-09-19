@@ -460,6 +460,8 @@ async def _run_validate_phase(db: DBSession, session_id: str, session):
     total_errors = 0
     auto_fixed = 0
     escalation_count = 0
+    # Track which (rule, field) combos already have an escalation to avoid duplicates
+    seen_escalations: set[tuple[str, str]] = set()
 
     for rec in records:
         data = rec.cleaned_data or {}
@@ -475,6 +477,10 @@ async def _run_validate_phase(db: DBSession, session_id: str, session):
             rec.validation_errors = remaining
 
             for err in remaining:
+                esc_key = (err["rule"], err["field"])
+                if esc_key in seen_escalations:
+                    continue  # Already escalated this issue type
+                seen_escalations.add(esc_key)
                 esc_data = evaluate_validation_escalation(err, fixed_data)
                 if esc_data:
                     db.add(Escalation(
