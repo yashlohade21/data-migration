@@ -23,17 +23,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   <path strokeLinecap="round" strokeLinejoin="round" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
                 </svg>
               </div>
-              <div className="flex flex-col">
-                <span className="font-bold text-gray-900 text-[15px] leading-tight tracking-tight">Migration Agent</span>
-                <span className="text-[10px] text-gray-400 leading-tight">AI-Powered Data Pipeline</span>
-              </div>
+              <span className="font-bold text-gray-900 text-[15px] leading-tight tracking-tight">Migration Agent</span>
             </a>
             <div className="flex items-center gap-3">
-              <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                <span className="text-[10px] font-semibold text-emerald-700 uppercase tracking-wide">Live</span>
-              </div>
-              <span className="text-[11px] font-mono font-medium text-gray-400 bg-gray-100 px-2.5 py-1 rounded-md border border-gray-200">v1.0</span>
             </div>
           </div>
         </header>
