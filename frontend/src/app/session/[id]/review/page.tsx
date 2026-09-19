@@ -79,11 +79,23 @@ export default function ReviewPage({ params }: { params: Promise<{ id: string }>
     }
   }, [sse.events, id, router]);
 
-  // Always poll for updates while on review page (catches missed SSE events)
+  // Poll session status to catch missed SSE events; full reload only on status change
   useEffect(() => {
-    const interval = setInterval(() => { loadData(); }, 4000);
+    let prevStatus = sessionStatus;
+    const interval = setInterval(async () => {
+      try {
+        const session = await api.getSession(id);
+        if (session.status !== prevStatus) {
+          prevStatus = session.status;
+          setSessionStatus(session.status);
+          if (session.status === "awaiting_review" || session.status === "ready_to_push") {
+            await loadData();
+          }
+        }
+      } catch { /* ignore poll errors */ }
+    }, 3000);
     return () => clearInterval(interval);
-  }, [id]);
+  }, [id, sessionStatus]);
 
   const pending = escalations.filter((e) => e.status === "pending");
   const resolved = escalations.filter((e) => e.status !== "pending");

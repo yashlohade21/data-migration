@@ -378,9 +378,10 @@ async def _run_clean_phase(db: DBSession, session_id: str, session):
                     ))
                     escalation_count += 1
 
-        db.commit()
         await emit(session_id, "log", {"message": f"Cleaned {len(records)} records from '{file.filename}'"})
 
+    # Commit all cleaned records + escalations in one batch
+    db.commit()
     _log(db, session_id, "clean_complete", phase="clean")
     await emit(session_id, "phase", {"phase": "clean", "status": "complete"})
 
