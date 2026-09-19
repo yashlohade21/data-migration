@@ -5,27 +5,28 @@ import Link from "next/link";
 import { api } from "@/lib/api";
 import { Session } from "@/lib/types";
 import {
-  Plus, ArrowRight, Database, Clock, Layers,
+  Plus, ArrowRight, Database, Clock,
   CheckCircle, AlertTriangle, Loader2,
-  Shield, Zap, GitMerge, Users,
+  Upload, GitMerge, Search, Send, ClipboardCheck,
 } from "lucide-react";
 
-const STATUS_CONFIG: Record<string, { bg: string; text: string; dot: string; icon: React.ComponentType<{ className?: string }> }> = {
-  created: { bg: "bg-gray-50", text: "text-gray-600", dot: "bg-gray-400", icon: Clock },
-  uploading: { bg: "bg-blue-50", text: "text-blue-700", dot: "bg-blue-500", icon: Loader2 },
-  processing: { bg: "bg-indigo-50", text: "text-indigo-700", dot: "bg-indigo-500", icon: Loader2 },
-  awaiting_review: { bg: "bg-amber-50", text: "text-amber-700", dot: "bg-amber-500", icon: AlertTriangle },
-  ready_to_push: { bg: "bg-emerald-50", text: "text-emerald-700", dot: "bg-emerald-500", icon: CheckCircle },
-  pushing: { bg: "bg-blue-50", text: "text-blue-700", dot: "bg-blue-500", icon: Loader2 },
-  completed: { bg: "bg-emerald-50", text: "text-emerald-700", dot: "bg-emerald-500", icon: CheckCircle },
-  error: { bg: "bg-red-50", text: "text-red-700", dot: "bg-red-500", icon: AlertTriangle },
+const STATUS_CONFIG: Record<string, { bg: string; text: string; dot: string }> = {
+  created: { bg: "bg-gray-50", text: "text-gray-600", dot: "bg-gray-400" },
+  uploading: { bg: "bg-blue-50", text: "text-blue-700", dot: "bg-blue-500" },
+  processing: { bg: "bg-indigo-50", text: "text-indigo-700", dot: "bg-indigo-500" },
+  awaiting_review: { bg: "bg-amber-50", text: "text-amber-700", dot: "bg-amber-500" },
+  ready_to_push: { bg: "bg-emerald-50", text: "text-emerald-700", dot: "bg-emerald-500" },
+  pushing: { bg: "bg-blue-50", text: "text-blue-700", dot: "bg-blue-500" },
+  completed: { bg: "bg-emerald-50", text: "text-emerald-700", dot: "bg-emerald-500" },
+  error: { bg: "bg-red-50", text: "text-red-700", dot: "bg-red-500" },
 };
 
-const FEATURES = [
-  { icon: Zap, title: "Auto Schema Mapping", desc: "Intelligent column matching with confidence scores", gradient: "from-indigo-500 to-blue-500", bg: "bg-indigo-50", color: "text-indigo-600" },
-  { icon: GitMerge, title: "Smart Deduplication", desc: "Fuzzy name + email matching across files", gradient: "from-violet-500 to-purple-500", bg: "bg-violet-50", color: "text-violet-600" },
-  { icon: Shield, title: "Data Validation", desc: "Per-field rules with auto-fix attempts", gradient: "from-emerald-500 to-teal-500", bg: "bg-emerald-50", color: "text-emerald-600" },
-  { icon: Users, title: "Human-in-the-Loop", desc: "Review only what the agent can't decide", gradient: "from-orange-500 to-amber-500", bg: "bg-orange-50", color: "text-orange-600" },
+const STEPS = [
+  { num: 1, label: "Upload", desc: "CSV / Excel files", icon: Upload },
+  { num: 2, label: "Map", desc: "Auto-match columns", icon: GitMerge },
+  { num: 3, label: "Review", desc: "Fix edge cases", icon: Search },
+  { num: 4, label: "Push", desc: "Send to target", icon: Send },
+  { num: 5, label: "Audit", desc: "Full trail", icon: ClipboardCheck },
 ];
 
 export default function Home() {
@@ -75,17 +76,20 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Feature cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-        {FEATURES.map((f) => (
-          <div key={f.title} className="card flex items-start gap-3.5 p-4 group cursor-default transition-all duration-200">
-            <div className={`w-10 h-10 rounded-xl ${f.bg} flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-200`}>
-              <f.icon className={`w-[18px] h-[18px] ${f.color}`} />
+      {/* Steps */}
+      <div className="flex items-center justify-between gap-1 px-2">
+        {STEPS.map((step, i) => (
+          <div key={step.num} className="flex items-center gap-1 flex-1 last:flex-none">
+            <div className="flex flex-col items-center text-center">
+              <div className="w-9 h-9 rounded-full bg-indigo-50 border border-indigo-200 flex items-center justify-center">
+                <step.icon className="w-4 h-4 text-indigo-600" />
+              </div>
+              <span className="text-[11px] font-bold text-gray-900 mt-1.5">{step.label}</span>
+              <span className="text-[10px] text-gray-400 leading-tight">{step.desc}</span>
             </div>
-            <div>
-              <p className="text-[13px] font-bold text-gray-900">{f.title}</p>
-              <p className="text-xs text-gray-500 mt-0.5 leading-relaxed">{f.desc}</p>
-            </div>
+            {i < STEPS.length - 1 && (
+              <div className="h-px flex-1 bg-gray-200 mx-1 mt-[-20px]" />
+            )}
           </div>
         ))}
       </div>
@@ -146,7 +150,6 @@ export default function Home() {
           <div className="divide-y divide-gray-100">
             {sessions.map((s, i) => {
               const cfg = STATUS_CONFIG[s.status] || STATUS_CONFIG.created;
-              const Icon = cfg.icon;
               return (
                 <Link
                   key={s.id}
