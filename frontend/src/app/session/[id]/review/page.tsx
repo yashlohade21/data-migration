@@ -89,13 +89,16 @@ export default function ReviewPage({ params }: { params: Promise<{ id: string }>
   const resolved = escalations.filter((e) => e.status !== "pending");
 
   const resumeAgent = async () => {
+    if (resuming || sessionStatus === "processing") return;
     setResuming(true);
+    setSessionStatus("processing"); // Prevent double-resume
     setError(null);
     sse.connect();
     try {
       await api.resumeAgent(id);
     } catch (e: unknown) {
       setError(e instanceof Error ? e.message : "Operation failed");
+      setSessionStatus("awaiting_review"); // Revert on error
     } finally {
       setResuming(false);
     }

@@ -74,6 +74,16 @@ async def resume(session_id: str, db: DBSession = Depends(get_db)):
     if not session:
         raise HTTPException(status_code=404, detail="Session not found")
 
+    if session.status == "processing":
+        raise HTTPException(status_code=400, detail="Agent already running")
+
+    if session.status not in ("awaiting_review",):
+        raise HTTPException(status_code=400, detail=f"Cannot resume from status '{session.status}'")
+
+    # Mark as processing immediately to prevent double-resume
+    session.status = "processing"
+    db.commit()
+
     logger.info("Resuming agent for session %s", session_id)
     loop = asyncio.get_event_loop()
     loop.create_task(resume_agent(session_id))
