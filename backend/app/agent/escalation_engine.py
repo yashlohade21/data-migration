@@ -36,11 +36,16 @@ def evaluate_mapping_escalation(mapping: dict,
 
 def evaluate_date_escalation(field: str, value: str, parsed: str, all_dates: list[str]) -> dict | None:
     """Check if an ambiguous date can be disambiguated by other rows."""
-    # If other dates from same column have DD>12, it's DD/MM/YYYY format
+    # Only check dates with same format (slash or dash-separated, non-ISO)
     for d in all_dates:
+        if "/" not in d and "-" not in d:
+            continue
         parts = d.split("/") if "/" in d else d.split("-")
         if len(parts) == 3:
             first = int(parts[0]) if parts[0].isdigit() else 0
+            # Skip ISO dates (YYYY-MM-DD) — they don't help disambiguate DD/MM vs MM/DD
+            if first > 31:
+                continue
             if first > 12:
                 return None  # Confirmed DD/MM/YYYY
 
