@@ -7,7 +7,7 @@ import { Session } from "@/lib/types";
 import {
   Plus, ArrowRight, Database, Clock, Layers,
   CheckCircle, AlertTriangle, Loader2,
-  Shield, Zap, GitMerge, Users, Sparkles,
+  Shield, Zap, GitMerge, Users,
 } from "lucide-react";
 
 const STATUS_CONFIG: Record<string, { bg: string; text: string; dot: string; icon: React.ComponentType<{ className?: string }> }> = {
@@ -65,10 +65,6 @@ export default function Home() {
       {/* Hero */}
       <div className="text-center pt-12 pb-6 hero-section rounded-3xl -mx-2 px-6 relative overflow-hidden">
         <div className="relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 text-indigo-700 text-xs font-semibold mb-6 border border-indigo-200/60 shadow-sm backdrop-blur-sm">
-            <Sparkles className="w-3.5 h-3.5" />
-            AI-Powered Migration Pipeline
-          </div>
           <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight gradient-text leading-tight pb-2">
             Data Migration Agent
           </h1>
