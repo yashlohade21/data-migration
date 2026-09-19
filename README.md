@@ -106,6 +106,48 @@ Open **http://localhost:3000**
 **Database:** Neon PostgreSQL (prod) / SQLite (dev)
 **Hosting:** Vercel (frontend), Google Cloud Run (backend)
 
+---
+
+## Write-up: Approach, Design Trade-offs & Scaling
+
+### Approach
+
+The agent runs a five-phase pipeline — **Ingest → Map → Clean → Dedup → Validate** — and pauses at each phase boundary only when it encounters genuinely ambiguous decisions. A non-technical implementation consultant can upload multiple CSV/Excel files, watch the agent work in real-time via SSE streaming, resolve a small queue of escalations, and push clean data to the target system — all without writing a single line of code.
+
+### Where I Drew the Escalation Boundary
+
+The core design question: what should the agent handle alone vs. escalate? My principle: **escalate only when two reasonable people would disagree on the right answer.**
+
+**Agent handles autonomously (no human needed):**
+- Column mappings above 85% confidence (keyword + fuzzy matching + Gemini LLM reasoning)
+- Date format normalization when the format is unambiguous (DD > 12 confirms DD/MM/YYYY)
+- Phone/email/name cleaning (whitespace, casing, format normalization)
+- Department/gender/employment-type enum normalization via known aliases
+- Duplicate detection where one record is clearly more complete (auto-merge favoring the fuller record)
+- Validation auto-fixes via fuzzy matching to the nearest valid enum value
+
+**Agent escalates to human (genuinely ambiguous):**
+- **Unknown enum values** — e.g., "Strategic Initiatives" doesn't map to any known department; the human picks the right one
+- **Duplicate conflicts with 3+ differing fields** — e.g., same employee in two systems with different salary, location, title, and manager; the agent can't guess which is authoritative
+- **Missing required fields** — e.g., contractors with no employee ID; the human decides the policy (generate IDs, skip, or fill manually)
+- **Ambiguous dates** — e.g., 03/06/2021 could be March 6 or June 3, and no other date in the file disambiguates it
+
+Escalations are **deduplicated** (one per issue type, not per record) and **batched per phase** so the human sees a clean queue of 3–5 decisions, not 50 repetitive ones. Each escalation card shows the AI's suggestion, full context, and one-click Accept/Override/Reject.
+
+### Delta Solutioning
+
+The Audit tab shows a delta report: what percentage of decisions the AI made autonomously vs. what required human input. For the demo dataset (19 records, 3 files), the agent auto-resolves ~90% of decisions and escalates ~10% — a clear signal of how much manual work was eliminated.
+
+### What I'd Build Next to Scale to 50+ Enterprise Clients
+
+1. **Learning from corrections** — store human overrides and feed them back into the mapper so the same escalation never appears twice for the same client
+2. **Configurable autonomy levels** — the architecture already supports conservative/balanced/aggressive presets; I'd expose per-rule confidence thresholds in the UI
+3. **Real Darwinbox API integration** — replace the mock push with actual API calls, field-level error handling, and rollback support
+4. **Batch processing at scale** — chunked file processing, background job queues (Celery/Redis), and progress tracking for 100K+ record migrations
+5. **Multi-entity support** — extend beyond employees to handle departments, designations, cost centers, and org hierarchies as separate but linked migration pipelines
+
+---
+
 ## Project Structure
 
 ```
