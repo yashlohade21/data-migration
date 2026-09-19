@@ -10,7 +10,7 @@ interface Props {
 }
 
 const STATUS_DOTS: Record<string, string> = {
-  raw: "bg-slate-400",
+  raw: "bg-gray-400",
   mapped: "bg-blue-400",
   cleaned: "bg-cyan-500",
   deduplicated: "bg-purple-500",
@@ -27,7 +27,7 @@ export default function DataPreviewTable({ records, showStatus = true, pageSize 
 
   if (records.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center py-12 text-slate-400">
+      <div className="flex flex-col items-center justify-center py-12 text-gray-400">
         <Table className="w-8 h-8 mb-2" />
         <p className="text-sm">No records to display</p>
       </div>
@@ -51,39 +51,39 @@ export default function DataPreviewTable({ records, showStatus = true, pageSize 
       <div className="overflow-x-auto">
         <table className="w-full text-xs">
           <thead>
-            <tr className="border-b border-slate-200 bg-slate-50/50">
-              {showStatus && <th className="px-3 py-2.5 text-left text-[11px] font-semibold text-slate-500 uppercase tracking-wider w-20">Status</th>}
+            <tr className="border-b border-gray-200 bg-gray-50/50">
+              {showStatus && <th className="px-3 py-2.5 text-left text-[11px] font-semibold text-gray-500 uppercase tracking-wider w-20">Status</th>}
               {columns.map((col) => (
-                <th key={col} className="px-3 py-2.5 text-left text-[11px] font-semibold text-slate-500 uppercase tracking-wider whitespace-nowrap">
+                <th key={col} className="px-3 py-2.5 text-left text-[11px] font-semibold text-gray-500 uppercase tracking-wider whitespace-nowrap">
                   {col.replace(/_/g, " ")}
                 </th>
               ))}
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-100">
+          <tbody className="divide-y divide-gray-100">
             {pageRecords.map((rec) => {
               const data = getData(rec);
               const hasErrors = rec.validation_errors && rec.validation_errors.length > 0;
               return (
                 <tr
                   key={rec.id}
-                  className={`hover:bg-slate-50/60 transition-colors ${
+                  className={`hover:bg-gray-50/60 transition-colors ${
                     rec.is_duplicate ? "opacity-30" : ""
                   } ${hasErrors ? "bg-red-50/30" : ""}`}
                 >
                   {showStatus && (
                     <td className="px-3 py-2">
                       <div className="flex items-center gap-1.5">
-                        <div className={`w-1.5 h-1.5 rounded-full ${STATUS_DOTS[rec.status] || "bg-slate-300"}`} />
-                        <span className="text-[11px] text-slate-500">{rec.push_status || rec.status}</span>
+                        <div className={`w-1.5 h-1.5 rounded-full ${STATUS_DOTS[rec.status] || "bg-gray-300"}`} />
+                        <span className="text-[11px] text-gray-500">{rec.push_status || rec.status}</span>
                       </div>
                     </td>
                   )}
                   {columns.map((col) => (
-                    <td key={col} className="px-3 py-2 whitespace-nowrap max-w-36 truncate text-slate-700">
+                    <td key={col} className="px-3 py-2 whitespace-nowrap max-w-36 truncate text-gray-700">
                       {data[col] != null
                       ? typeof data[col] === "object" ? JSON.stringify(data[col]) : String(data[col])
-                      : <span className="text-slate-300">—</span>}
+                      : <span className="text-gray-300">—</span>}
                     </td>
                   ))}
                 </tr>
@@ -95,33 +95,33 @@ export default function DataPreviewTable({ records, showStatus = true, pageSize 
 
       {/* Pagination */}
       {totalPages > 1 && (
-        <div className="flex items-center justify-between px-3 py-2.5 border-t border-slate-100">
-          <span className="text-[11px] text-slate-400">
+        <div className="flex items-center justify-between px-3 py-2.5 border-t border-gray-100">
+          <span className="text-[11px] text-gray-400">
             {start + 1}–{end} of {records.length} records
           </span>
           <div className="flex items-center gap-1">
             <button
               onClick={() => setPage(0)}
               disabled={page === 0}
-              className="px-2 py-1 text-[11px] text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+              className="px-2 py-1 text-[11px] text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
             >
               First
             </button>
             <button
               onClick={() => setPage(page - 1)}
               disabled={page === 0}
-              className="p-1 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+              className="p-1 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
               aria-label="Previous page"
             >
               <ChevronLeft className="w-3.5 h-3.5" />
             </button>
-            <span className="px-2 text-[11px] font-medium text-slate-600">
+            <span className="px-2 text-[11px] font-medium text-gray-600">
               {page + 1} / {totalPages}
             </span>
             <button
               onClick={() => setPage(page + 1)}
               disabled={page >= totalPages - 1}
-              className="p-1 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+              className="p-1 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
               aria-label="Next page"
             >
               <ChevronRight className="w-3.5 h-3.5" />
@@ -129,7 +129,7 @@ export default function DataPreviewTable({ records, showStatus = true, pageSize 
             <button
               onClick={() => setPage(totalPages - 1)}
               disabled={page >= totalPages - 1}
-              className="px-2 py-1 text-[11px] text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+              className="px-2 py-1 text-[11px] text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
             >
               Last
             </button>

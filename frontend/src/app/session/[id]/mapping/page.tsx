@@ -27,13 +27,13 @@ export default function MappingPage({ params }: { params: Promise<{ id: string }
   const escThreshold = session?.stats?.esc_threshold ?? 0.5;
 
   if (loading) {
-    return <div className="flex justify-center py-16"><Loader2 className="w-5 h-5 animate-spin text-slate-400" /></div>;
+    return <div className="flex justify-center py-16"><Loader2 className="w-5 h-5 animate-spin text-gray-400" /></div>;
   }
 
   if (mappings.length === 0) {
     return (
-      <div className="bg-white rounded-2xl border border-slate-200 p-12 text-center">
-        <p className="text-slate-500 text-sm">No mappings yet. Upload files and start the agent first.</p>
+      <div className="bg-white rounded-2xl border border-gray-200 p-12 text-center">
+        <p className="text-gray-500 text-sm">No mappings yet. Upload files and start the agent first.</p>
       </div>
     );
   }
@@ -60,47 +60,47 @@ export default function MappingPage({ params }: { params: Promise<{ id: string }
 
       {/* Stats */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <div className="bg-white rounded-2xl border border-slate-200 p-5 flex items-center gap-4 shadow-sm">
-          <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center">
+        <div className="card p-5 flex items-center gap-4">
+          <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center border border-emerald-100">
             <Check className="w-5 h-5 text-emerald-600" />
           </div>
           <div>
-            <p className="text-2xl font-bold text-slate-900 tabular-nums">{auto}</p>
-            <p className="text-xs text-slate-500">Auto-accepted</p>
+            <p className="text-2xl font-bold text-gray-900 tabular-nums">{auto}</p>
+            <p className="text-[11px] font-semibold text-gray-500">Auto-accepted</p>
           </div>
         </div>
-        <div className="bg-white rounded-2xl border border-slate-200 p-5 flex items-center gap-4 shadow-sm">
-          <div className="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center">
-            <Eye className="w-5 h-5 text-amber-500" />
+        <div className="card p-5 flex items-center gap-4">
+          <div className="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center border border-amber-100">
+            <Eye className="w-5 h-5 text-amber-600" />
           </div>
           <div>
-            <p className="text-2xl font-bold text-slate-900 tabular-nums">{needsReview}</p>
-            <p className="text-xs text-slate-500">Needs Review</p>
+            <p className="text-2xl font-bold text-gray-900 tabular-nums">{needsReview}</p>
+            <p className="text-[11px] font-semibold text-gray-500">Needs Review</p>
           </div>
         </div>
-        <div className="bg-white rounded-2xl border border-slate-200 p-5 flex items-center gap-4 shadow-sm">
-          <div className="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center">
+        <div className="card p-5 flex items-center gap-4">
+          <div className="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center border border-red-100">
             <AlertTriangle className="w-5 h-5 text-red-500" />
           </div>
           <div>
-            <p className="text-2xl font-bold text-slate-900 tabular-nums">{escalated}</p>
-            <p className="text-xs text-slate-500">Escalated</p>
+            <p className="text-2xl font-bold text-gray-900 tabular-nums">{escalated}</p>
+            <p className="text-[11px] font-semibold text-gray-500">Escalated</p>
           </div>
         </div>
-        <div className="bg-white rounded-2xl border border-slate-200 p-5 flex items-center gap-4 shadow-sm">
-          <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center">
+        <div className="card p-5 flex items-center gap-4">
+          <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center border border-indigo-100">
             <User className="w-5 h-5 text-indigo-600" />
           </div>
           <div>
-            <p className="text-2xl font-bold text-slate-900 tabular-nums">{human}</p>
-            <p className="text-xs text-slate-500">Human-resolved</p>
+            <p className="text-2xl font-bold text-gray-900 tabular-nums">{human}</p>
+            <p className="text-[11px] font-semibold text-gray-500">Human-resolved</p>
           </div>
         </div>
       </div>
 
       {/* Threshold Legend — dynamic based on autonomy level */}
-      <div className="bg-white rounded-xl border border-slate-200 px-5 py-3 flex items-center gap-6 text-xs text-slate-600 shadow-sm flex-wrap">
-        <span className="font-semibold text-slate-500 uppercase tracking-wider text-[10px]">Thresholds</span>
+      <div className="bg-white rounded-xl border border-gray-200 px-5 py-3 flex items-center gap-6 text-xs text-gray-600 shadow-sm flex-wrap">
+        <span className="font-semibold text-gray-500 uppercase tracking-wider text-[10px]">Thresholds</span>
         <span className="flex items-center gap-1.5">
           <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
           &ge;{Math.round(autoThreshold * 100)}% Auto-accepted
@@ -116,11 +116,11 @@ export default function MappingPage({ params }: { params: Promise<{ id: string }
       </div>
 
       {/* Table */}
-      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-        <div className="px-6 py-5 border-b border-slate-100 flex items-center justify-between">
+      <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+        <div className="px-6 py-5 border-b border-gray-100 flex items-center justify-between">
           <div>
-            <h2 className="font-semibold text-slate-900">Column Mappings</h2>
-            <p className="text-xs text-slate-400 mt-0.5">{mappings.length} mappings across all files</p>
+            <h2 className="font-semibold text-gray-900">Column Mappings</h2>
+            <p className="text-xs text-gray-400 mt-0.5">{mappings.length} mappings across all files</p>
           </div>
           <Link
             href={`/session/${id}/review`}
@@ -130,7 +130,7 @@ export default function MappingPage({ params }: { params: Promise<{ id: string }
           </Link>
         </div>
         {/* Filter pills */}
-        <div className="px-6 py-3 border-b border-slate-100 flex gap-2 flex-wrap">
+        <div className="px-6 py-3 border-b border-gray-100 flex gap-2 flex-wrap">
           {([
             { key: "all", label: "All", count: mappings.length },
             { key: "needs_review", label: "Needs Review", count: needsReview },
@@ -143,7 +143,7 @@ export default function MappingPage({ params }: { params: Promise<{ id: string }
               className={`text-xs font-medium px-3 py-1.5 rounded-lg transition-all ${
                 filter === key
                   ? "bg-indigo-100 text-indigo-700 ring-1 ring-indigo-200"
-                  : "bg-slate-100 text-slate-500 hover:bg-slate-200"
+                  : "bg-gray-100 text-gray-500 hover:bg-gray-200"
               }`}
             >
               {label} ({count})

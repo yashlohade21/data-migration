@@ -35,7 +35,7 @@ const RULE_COLORS: Record<string, string> = {
   duplicate_conflict: "bg-rose-100 text-rose-700",
   validation_fail: "bg-red-100 text-red-700",
   unknown_enum: "bg-amber-100 text-amber-700",
-  missing_required: "bg-slate-100 text-slate-700",
+  missing_required: "bg-gray-100 text-gray-700",
 };
 
 export default function EscalationCard({ escalation, sessionId, onResolved, onError }: Props) {
@@ -61,9 +61,9 @@ export default function EscalationCard({ escalation, sessionId, onResolved, onEr
 
   if (escalation.status !== "pending") {
     return (
-      <div className="border border-slate-200 rounded-xl px-4 py-3 bg-slate-50/60 flex items-center gap-3">
+      <div className="border border-gray-200 rounded-xl px-4 py-3 bg-gray-50/60 flex items-center gap-3">
         <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-        <span className="text-sm text-slate-500 flex-1 truncate">{escalation.description}</span>
+        <span className="text-sm text-gray-500 flex-1 truncate">{escalation.description}</span>
         <span className="text-[11px] font-medium bg-emerald-50 text-emerald-600 px-2 py-0.5 rounded-md">
           {escalation.status}
         </span>
@@ -74,7 +74,7 @@ export default function EscalationCard({ escalation, sessionId, onResolved, onEr
   const ctx = escalation.context || {};
 
   return (
-    <div className={`border border-slate-200 border-l-4 rounded-xl overflow-hidden bg-white shadow-sm ${
+    <div className={`border border-gray-200 border-l-4 rounded-xl overflow-hidden bg-white shadow-sm ${
       SEVERITY_STYLES[escalation.severity as keyof typeof SEVERITY_STYLES] || SEVERITY_STYLES.medium
     }`}>
       {/* Header */}
@@ -83,7 +83,7 @@ export default function EscalationCard({ escalation, sessionId, onResolved, onEr
         tabIndex={0}
         aria-expanded={expanded}
         aria-label={`${RULE_LABELS[escalation.rule] || escalation.rule}: ${escalation.description}`}
-        className="flex items-center gap-3 px-4 py-3.5 cursor-pointer hover:bg-slate-50/40 transition-colors"
+        className="flex items-center gap-3 px-4 py-3.5 cursor-pointer hover:bg-gray-50/40 transition-colors"
         onClick={() => setExpanded(!expanded)}
         onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setExpanded(!expanded); } }}
       >
@@ -93,36 +93,36 @@ export default function EscalationCard({ escalation, sessionId, onResolved, onEr
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 mb-1">
             <span className={`text-[11px] font-semibold px-2 py-0.5 rounded-md ${
-              RULE_COLORS[escalation.rule] || "bg-slate-100 text-slate-600"
+              RULE_COLORS[escalation.rule] || "bg-gray-100 text-gray-600"
             }`}>
               {RULE_LABELS[escalation.rule] || escalation.rule}
             </span>
           </div>
-          <p className="text-[13px] text-slate-700 leading-snug">{escalation.description}</p>
+          <p className="text-[13px] text-gray-700 leading-snug">{escalation.description}</p>
         </div>
         <div className="shrink-0">
-          {expanded ? <ChevronUp className="w-4 h-4 text-slate-400" /> : <ChevronDown className="w-4 h-4 text-slate-400" />}
+          {expanded ? <ChevronUp className="w-4 h-4 text-gray-400" /> : <ChevronDown className="w-4 h-4 text-gray-400" />}
         </div>
       </div>
 
       {/* Expanded content */}
       {expanded && (
-        <div className="px-4 pb-4 space-y-3 border-t border-slate-100 pt-3 animate-fade-in">
+        <div className="px-4 pb-4 space-y-3 border-t border-gray-100 pt-3 animate-fade-in">
           {/* Duplicate conflicts */}
           {escalation.rule === "duplicate_conflict" && ctx.conflicts && (
             <div className="text-xs space-y-1.5">
-              <p className="font-semibold text-slate-600 text-[11px] uppercase tracking-wider">Conflicts</p>
-              <div className="bg-white rounded-lg border border-slate-200 overflow-hidden">
+              <p className="font-semibold text-gray-600 text-[11px] uppercase tracking-wider">Conflicts</p>
+              <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
                 <table className="w-full text-xs">
-                  <thead><tr className="bg-slate-50">
-                    <th className="text-left px-3 py-2 font-medium text-slate-500">Field</th>
+                  <thead><tr className="bg-gray-50">
+                    <th className="text-left px-3 py-2 font-medium text-gray-500">Field</th>
                     <th className="text-left px-3 py-2 font-medium text-red-500">Record A</th>
                     <th className="text-left px-3 py-2 font-medium text-blue-500">Record B</th>
                   </tr></thead>
-                  <tbody className="divide-y divide-slate-100">
+                  <tbody className="divide-y divide-gray-100">
                     {ctx.conflicts.map((c: any, i: number) => (
                       <tr key={i}>
-                        <td className="px-3 py-1.5 font-mono text-slate-600">{c.field}</td>
+                        <td className="px-3 py-1.5 font-mono text-gray-600">{c.field}</td>
                         <td className="px-3 py-1.5 text-red-700">{String(c.value_a)}</td>
                         <td className="px-3 py-1.5 text-blue-700">{String(c.value_b)}</td>
                       </tr>
@@ -136,9 +136,9 @@ export default function EscalationCard({ escalation, sessionId, onResolved, onEr
           {/* Mapping context */}
           {escalation.rule === "ambiguous_mapping" && (
             <div className="space-y-1.5">
-              <div className="flex items-center gap-2 text-xs text-slate-600">
-                <code className="bg-slate-100 px-2 py-0.5 rounded font-mono">{ctx.source_column}</code>
-                <span className="text-slate-400">{"→"}</span>
+              <div className="flex items-center gap-2 text-xs text-gray-600">
+                <code className="bg-gray-100 px-2 py-0.5 rounded font-mono">{ctx.source_column}</code>
+                <span className="text-gray-400">{"→"}</span>
                 <code className="bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded font-mono">{ctx.suggested_target || "?"}</code>
               </div>
               {ctx.confidence != null && (
@@ -163,7 +163,7 @@ export default function EscalationCard({ escalation, sessionId, onResolved, onEr
               value={overrideValue}
               onChange={(e) => setOverrideValue(e.target.value)}
               aria-label="Select override value"
-              className="w-full text-xs h-9 border border-slate-200 rounded-lg px-3 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-400"
+              className="w-full text-xs h-9 border border-gray-200 rounded-lg px-3 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-400"
             >
               <option value="">Select correct value...</option>
               {escalation.rule === "ambiguous_mapping"
@@ -182,7 +182,7 @@ export default function EscalationCard({ escalation, sessionId, onResolved, onEr
               value={overrideValue}
               onChange={(e) => setOverrideValue(e.target.value)}
               placeholder={escalation.rule === "ambiguous_date" ? "YYYY-MM-DD" : "Enter correct value"}
-              className="w-full text-xs h-9 border border-slate-200 rounded-lg px-3 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-400"
+              className="w-full text-xs h-9 border border-gray-200 rounded-lg px-3 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-400"
             />
           )}
 
@@ -199,7 +199,7 @@ export default function EscalationCard({ escalation, sessionId, onResolved, onEr
             <button
               onClick={() => resolve("rejected")}
               disabled={resolving}
-              className="flex items-center gap-1.5 px-3.5 py-2 bg-white text-slate-600 border border-slate-200 rounded-lg text-xs font-medium hover:bg-slate-50 disabled:opacity-40 transition-colors"
+              className="flex items-center gap-1.5 px-3.5 py-2 bg-white text-gray-600 border border-gray-200 rounded-lg text-xs font-medium hover:bg-gray-50 disabled:opacity-40 transition-colors"
             >
               <XCircle className="w-3.5 h-3.5" />
               Reject

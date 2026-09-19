@@ -71,7 +71,7 @@ export default function PushPage({ params }: { params: Promise<{ id: string }> }
   return (
     <div className="space-y-6">
       {/* Tabs */}
-      <div className="flex gap-1 bg-slate-100 rounded-xl p-1">
+      <div className="flex gap-1 bg-gray-100 rounded-xl p-1">
         {[
           { key: "push", label: "Push", icon: Send },
           { key: "data", label: `Records (${records.length})`, icon: Table },
@@ -81,7 +81,7 @@ export default function PushPage({ params }: { params: Promise<{ id: string }> }
             key={t.key}
             onClick={() => setTab(t.key as "push" | "data" | "delta")}
             className={`flex-1 flex items-center justify-center gap-2 py-2 rounded-lg text-sm font-medium transition-all ${
-              tab === t.key ? "bg-white text-slate-900 shadow-sm" : "text-slate-500 hover:text-slate-700"
+              tab === t.key ? "bg-white text-gray-900 shadow-sm" : "text-gray-500 hover:text-gray-700"
             }`}
           >
             <t.icon className="w-3.5 h-3.5" />
@@ -101,29 +101,29 @@ export default function PushPage({ params }: { params: Promise<{ id: string }> }
           {/* Stats */}
           {counts && (
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div className="bg-white rounded-2xl border border-slate-200 p-5 text-center shadow-sm">
-                <p className="text-3xl font-bold text-slate-900 tabular-nums">{counts.total}</p>
-                <p className="text-xs text-slate-500 mt-1">Total Records</p>
+              <div className="bg-white rounded-2xl border border-gray-200 p-5 text-center shadow-sm">
+                <p className="text-3xl font-bold text-gray-900 tabular-nums">{counts.total}</p>
+                <p className="text-xs text-gray-500 mt-1">Total Records</p>
               </div>
               <div className="bg-white rounded-2xl border border-emerald-100 p-5 text-center shadow-sm">
                 <p className="text-3xl font-bold text-emerald-600 tabular-nums">{counts.active}</p>
-                <p className="text-xs text-slate-500 mt-1">Ready to Push</p>
+                <p className="text-xs text-gray-500 mt-1">Ready to Push</p>
               </div>
               <div className="bg-white rounded-2xl border border-purple-100 p-5 text-center shadow-sm">
                 <p className="text-3xl font-bold text-purple-600 tabular-nums">{counts.duplicates}</p>
-                <p className="text-xs text-slate-500 mt-1">Duplicates Removed</p>
+                <p className="text-xs text-gray-500 mt-1">Duplicates Removed</p>
               </div>
             </div>
           )}
 
           {/* Push results */}
           {pushResult && (
-            <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm space-y-5">
-              <h3 className="font-semibold text-slate-900">Push Results</h3>
+            <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm space-y-5">
+              <h3 className="font-semibold text-gray-900">Push Results</h3>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div className="bg-slate-50 rounded-xl p-4 text-center">
-                  <p className="text-2xl font-bold text-slate-900 tabular-nums">{pushResult.total}</p>
-                  <p className="text-xs text-slate-500">Total</p>
+                <div className="bg-gray-50 rounded-xl p-4 text-center">
+                  <p className="text-2xl font-bold text-gray-900 tabular-nums">{pushResult.total}</p>
+                  <p className="text-xs text-gray-500">Total</p>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-4 text-center">
                   <p className="text-2xl font-bold text-emerald-600 tabular-nums flex items-center justify-center gap-1.5">
@@ -140,7 +140,7 @@ export default function PushPage({ params }: { params: Promise<{ id: string }> }
               </div>
 
               {/* Progress bar */}
-              <div className="h-3 bg-slate-100 rounded-full overflow-hidden flex">
+              <div className="h-3 bg-gray-100 rounded-full overflow-hidden flex">
                 <div className="bg-emerald-500 transition-all duration-700 rounded-l-full" style={{ width: `${successPct}%` }} />
                 <div className="bg-red-400 transition-all duration-700 rounded-r-full" style={{ width: `${failedPct}%` }} />
               </div>
@@ -166,8 +166,8 @@ export default function PushPage({ params }: { params: Promise<{ id: string }> }
                   <div className="flex items-start gap-3">
                     <ShieldAlert className="w-6 h-6 text-indigo-600 shrink-0 mt-0.5" />
                     <div>
-                      <h3 className="font-semibold text-slate-900">Confirm Push</h3>
-                      <p className="text-sm text-slate-500 mt-1">
+                      <h3 className="font-semibold text-gray-900">Confirm Push</h3>
+                      <p className="text-sm text-gray-500 mt-1">
                         You are about to push <strong>{counts?.active || 0} records</strong> to the target system. This action will create employee records in the destination.
                       </p>
                     </div>
@@ -183,7 +183,7 @@ export default function PushPage({ params }: { params: Promise<{ id: string }> }
                     </button>
                     <button
                       onClick={() => setShowConfirm(false)}
-                      className="h-10 px-6 bg-white text-slate-600 border border-slate-200 rounded-lg font-medium text-sm hover:bg-slate-50 transition-colors"
+                      className="h-10 px-6 bg-white text-gray-600 border border-gray-200 rounded-lg font-medium text-sm hover:bg-gray-50 transition-colors"
                     >
                       Cancel
                     </button>
@@ -204,13 +204,13 @@ export default function PushPage({ params }: { params: Promise<{ id: string }> }
       )}
 
       {tab === "data" && (
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+        <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
           <DataPreviewTable records={records} />
         </div>
       )}
 
       {tab === "delta" && delta && (
-        <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+        <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
           <DeltaReport report={delta} />
         </div>
       )}

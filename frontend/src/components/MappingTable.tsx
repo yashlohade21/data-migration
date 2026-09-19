@@ -54,27 +54,27 @@ export default function MappingTable({ mappings, sessionId, onUpdate, readOnly }
         <AlertTriangle className="w-3 h-3" /> Escalated
       </span>
     );
-    return <span className="text-[11px] text-slate-400">{status}</span>;
+    return <span className="text-[11px] text-gray-400">{status}</span>;
   };
 
   return (
     <div className="overflow-x-auto">
       <table className="w-full">
         <thead>
-          <tr className="border-b border-slate-200">
-            <th className="text-left py-3 px-4 text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Source</th>
-            <th className="text-left py-3 px-4 text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Target</th>
-            <th className="text-left py-3 px-4 text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Confidence</th>
-            <th className="text-left py-3 px-4 text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Status</th>
-            <th className="text-left py-3 px-4 text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Reasoning</th>
-            {!readOnly && <th className="text-left py-3 px-4 text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Override</th>}
+          <tr className="border-b border-gray-200">
+            <th className="text-left py-3 px-4 text-[11px] font-semibold text-gray-500 uppercase tracking-wider">Source</th>
+            <th className="text-left py-3 px-4 text-[11px] font-semibold text-gray-500 uppercase tracking-wider">Target</th>
+            <th className="text-left py-3 px-4 text-[11px] font-semibold text-gray-500 uppercase tracking-wider">Confidence</th>
+            <th className="text-left py-3 px-4 text-[11px] font-semibold text-gray-500 uppercase tracking-wider">Status</th>
+            <th className="text-left py-3 px-4 text-[11px] font-semibold text-gray-500 uppercase tracking-wider">Reasoning</th>
+            {!readOnly && <th className="text-left py-3 px-4 text-[11px] font-semibold text-gray-500 uppercase tracking-wider">Override</th>}
           </tr>
         </thead>
-        <tbody className="divide-y divide-slate-100">
+        <tbody className="divide-y divide-gray-100">
           {mappings.map((m) => (
-            <tr key={m.id} className="hover:bg-slate-50/60 transition-colors">
+            <tr key={m.id} className="hover:bg-gray-50/60 transition-colors">
               <td className="py-3 px-4">
-                <code className="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded-md font-mono">{m.source_column}</code>
+                <code className="text-xs bg-gray-100 text-gray-700 px-2 py-0.5 rounded-md font-mono">{m.source_column}</code>
               </td>
               <td className="py-3 px-4">
                 {(m.human_override || m.target_field) ? (
@@ -82,12 +82,12 @@ export default function MappingTable({ mappings, sessionId, onUpdate, readOnly }
                     {m.human_override || m.target_field}
                   </code>
                 ) : (
-                  <span className="text-xs text-slate-400 italic">unmapped</span>
+                  <span className="text-xs text-gray-400 italic">unmapped</span>
                 )}
               </td>
               <td className="py-3 px-4">
                 <div className="flex items-center gap-2">
-                  <div className="w-14 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                  <div className="w-14 h-1.5 bg-gray-100 rounded-full overflow-hidden">
                     <div
                       className={`h-full rounded-full transition-all ${
                         m.confidence >= 0.85 ? "bg-emerald-500" : m.confidence >= 0.5 ? "bg-amber-400" : "bg-red-400"
@@ -102,7 +102,7 @@ export default function MappingTable({ mappings, sessionId, onUpdate, readOnly }
               </td>
               <td className="py-3 px-4">{getStatusBadge(m.status)}</td>
               <td className="py-3 px-4 max-w-48">
-                <span className="text-[11px] text-slate-500 truncate block">{m.ai_reasoning}</span>
+                <span className="text-[11px] text-gray-500 truncate block">{m.ai_reasoning}</span>
               </td>
               {!readOnly && (
                 <td className="py-3 px-4">
@@ -112,14 +112,14 @@ export default function MappingTable({ mappings, sessionId, onUpdate, readOnly }
                       onChange={(e) => handleOverride(m.id, e.target.value)}
                       disabled={updating === m.id}
                       aria-label={`Override target for ${m.source_column}`}
-                      className="text-xs h-8 border border-slate-200 rounded-lg pl-2.5 pr-7 appearance-none bg-white hover:border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-400 transition"
+                      className="text-xs h-8 border border-gray-200 rounded-lg pl-2.5 pr-7 appearance-none bg-white hover:border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-400 transition"
                     >
                       <option value="">None</option>
                       {TARGET_FIELDS.map((f) => (
                         <option key={f} value={f}>{f}</option>
                       ))}
                     </select>
-                    <ChevronDown className="w-3 h-3 absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400" />
+                    <ChevronDown className="w-3 h-3 absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400" />
                   </div>
                 </td>
               )}

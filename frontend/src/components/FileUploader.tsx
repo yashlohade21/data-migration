@@ -46,18 +46,18 @@ export default function FileUploader({ onUpload, disabled }: Props) {
         onDrop={handleDrop}
         className={`
           relative border-2 border-dashed rounded-2xl p-10 text-center cursor-pointer transition-all duration-200
-          ${dragging ? "border-indigo-400 bg-indigo-50/50 scale-[1.01]" : "border-slate-200 hover:border-slate-300 hover:bg-slate-50/50"}
+          ${dragging ? "border-indigo-400 bg-indigo-50/60 scale-[1.01]" : "border-gray-200 hover:border-gray-300 hover:bg-gray-50/50"}
           ${disabled ? "opacity-40 pointer-events-none" : ""}
         `}
         onClick={() => document.getElementById("file-input")?.click()}
       >
-        <div className="w-12 h-12 rounded-2xl bg-slate-100 flex items-center justify-center mx-auto mb-4">
-          <Upload className="w-5 h-5 text-slate-500" />
+        <div className="w-12 h-12 rounded-2xl bg-indigo-50 flex items-center justify-center mx-auto mb-4">
+          <Upload className="w-5 h-5 text-indigo-600" />
         </div>
-        <p className="text-sm text-slate-600">
-          Drop files here, or <span className="text-indigo-600 font-medium">browse</span>
+        <p className="text-sm text-gray-600">
+          Drop files here, or <span className="text-indigo-600 font-semibold">browse</span>
         </p>
-        <p className="text-xs text-slate-400 mt-1.5">.csv, .xlsx, .xls files</p>
+        <p className="text-xs text-gray-400 mt-1.5">.csv, .xlsx, .xls files</p>
         <input
           id="file-input"
           type="file"
@@ -71,23 +71,23 @@ export default function FileUploader({ onUpload, disabled }: Props) {
       {files.length > 0 && (
         <div className="space-y-2 animate-fade-in">
           {files.map((f, i) => (
-            <div key={i} className="flex items-center gap-3 bg-slate-50 rounded-xl px-4 py-3 border border-slate-100">
-              <div className="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center shrink-0">
+            <div key={i} className="flex items-center gap-3 bg-gray-50 rounded-xl px-4 py-3 border border-gray-100">
+              <div className="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center shrink-0 border border-emerald-100">
                 <FileSpreadsheet className="w-4 h-4 text-emerald-600" />
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-sm font-medium text-slate-700 truncate">{f.name}</p>
-                <p className="text-[11px] text-slate-400">{(f.size / 1024).toFixed(1)} KB</p>
+                <p className="text-sm font-semibold text-gray-800 truncate">{f.name}</p>
+                <p className="text-[11px] text-gray-400">{(f.size / 1024).toFixed(1)} KB</p>
               </div>
-              <button onClick={() => removeFile(i)} className="p-1 rounded-md hover:bg-slate-200/60 transition-colors">
-                <X className="w-4 h-4 text-slate-400" />
+              <button onClick={() => removeFile(i)} className="p-1 rounded-md hover:bg-gray-200/60 transition-colors">
+                <X className="w-4 h-4 text-gray-400" />
               </button>
             </div>
           ))}
           <button
             onClick={handleUpload}
             disabled={uploading || disabled}
-            className="w-full h-11 bg-indigo-600 text-white rounded-xl font-medium text-sm hover:bg-indigo-700 active:bg-indigo-800 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2 transition-all shadow-sm"
+            className="w-full h-11 btn-primary flex items-center justify-center gap-2 text-sm"
           >
             {uploading ? (
               <><Loader2 className="w-4 h-4 animate-spin" /> Uploading...</>

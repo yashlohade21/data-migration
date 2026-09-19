@@ -15,11 +15,11 @@ export default function DeltaReport({ report }: Props) {
     <div className="space-y-8">
       {/* Header */}
       <div>
-        <h3 className="text-lg font-semibold text-slate-900 flex items-center gap-2">
+        <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
           <TrendingUp className="w-5 h-5 text-indigo-500" />
           Contribution Report
         </h3>
-        <p className="text-sm text-slate-500 mt-1">How much work was done by the agent vs. you</p>
+        <p className="text-sm text-gray-500 mt-1">How much work was done by the agent vs. you</p>
       </div>
 
       {/* Big contribution bar */}
@@ -34,7 +34,7 @@ export default function DeltaReport({ report }: Props) {
             Human: {report.human_contribution_pct}%
           </span>
         </div>
-        <div className="h-5 bg-slate-100 rounded-full overflow-hidden flex shadow-inner">
+        <div className="h-5 bg-gray-100 rounded-full overflow-hidden flex shadow-inner">
           <div className="bg-gradient-to-r from-purple-500 to-purple-400 transition-all duration-700 rounded-l-full" style={{ width: `${aiWidth}%` }} />
           <div className="bg-gradient-to-r from-indigo-500 to-indigo-400 transition-all duration-700 rounded-r-full" style={{ width: `${humanWidth}%` }} />
         </div>
@@ -42,9 +42,9 @@ export default function DeltaReport({ report }: Props) {
 
       {/* Stats */}
       <div className="grid grid-cols-3 gap-4">
-        <div className="bg-slate-50 rounded-xl p-5 text-center border border-slate-100">
-          <p className="text-3xl font-bold text-slate-900 tabular-nums">{report.total_records}</p>
-          <p className="text-xs text-slate-500 mt-1.5 font-medium">Total Records</p>
+        <div className="bg-gray-50 rounded-xl p-5 text-center border border-gray-100">
+          <p className="text-3xl font-bold text-gray-900 tabular-nums">{report.total_records}</p>
+          <p className="text-xs text-gray-500 mt-1.5 font-medium">Total Records</p>
         </div>
         <div className="bg-purple-50/60 rounded-xl p-5 text-center border border-purple-100">
           <p className="text-3xl font-bold text-purple-700 tabular-nums">{report.ai_auto_resolved}</p>
@@ -58,12 +58,12 @@ export default function DeltaReport({ report }: Props) {
 
       {/* Phase breakdown */}
       <div>
-        <h4 className="text-sm font-semibold text-slate-700 mb-4">By Phase</h4>
+        <h4 className="text-sm font-semibold text-gray-700 mb-4">By Phase</h4>
         <div className="space-y-3">
           {Object.entries(report.phase_stats).map(([phase, stats]: [string, any]) => (
             <div key={phase} className="flex items-center gap-4">
-              <span className="w-16 text-xs font-semibold capitalize text-slate-500">{phase}</span>
-              <div className="flex-1 h-2 bg-slate-100 rounded-full overflow-hidden">
+              <span className="w-16 text-xs font-semibold capitalize text-gray-500">{phase}</span>
+              <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
                 {stats.total_escalations > 0 && (
                   <div
                     className="h-full bg-gradient-to-r from-amber-400 to-amber-300 rounded-full transition-all"
@@ -71,7 +71,7 @@ export default function DeltaReport({ report }: Props) {
                   />
                 )}
               </div>
-              <span className="text-[11px] text-slate-400 w-36 text-right tabular-nums">
+              <span className="text-[11px] text-gray-400 w-36 text-right tabular-nums">
                 {stats.total_escalations} escalations, {stats.human_resolved} human
               </span>
             </div>
@@ -82,12 +82,12 @@ export default function DeltaReport({ report }: Props) {
       {/* By rule */}
       {report.escalation_breakdown?.by_rule && Object.keys(report.escalation_breakdown.by_rule).length > 0 && (
         <div>
-          <h4 className="text-sm font-semibold text-slate-700 mb-4">Escalation Types</h4>
+          <h4 className="text-sm font-semibold text-gray-700 mb-4">Escalation Types</h4>
           <div className="grid grid-cols-2 gap-2">
             {Object.entries(report.escalation_breakdown.by_rule).map(([rule, count]) => (
-              <div key={rule} className="flex items-center justify-between bg-slate-50 rounded-xl px-4 py-3 border border-slate-100">
-                <span className="text-xs text-slate-600 capitalize">{rule.replace(/_/g, " ")}</span>
-                <span className="text-sm font-bold text-slate-800 tabular-nums">{count as number}</span>
+              <div key={rule} className="flex items-center justify-between bg-gray-50 rounded-xl px-4 py-3 border border-gray-100">
+                <span className="text-xs text-gray-600 capitalize">{rule.replace(/_/g, " ")}</span>
+                <span className="text-sm font-bold text-gray-800 tabular-nums">{count as number}</span>
               </div>
             ))}
           </div>

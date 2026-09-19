@@ -79,18 +79,18 @@ export default function ReviewPage({ params }: { params: Promise<{ id: string }>
   };
 
   if (loading) {
-    return <div className="flex justify-center py-16"><Loader2 className="w-5 h-5 animate-spin text-slate-400" /></div>;
+    return <div className="flex justify-center py-16"><Loader2 className="w-5 h-5 animate-spin text-gray-400" /></div>;
   }
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
       <div className="lg:col-span-3 space-y-4">
         {/* Tabs */}
-        <div className="flex gap-1 bg-slate-100 rounded-xl p-1">
+        <div className="flex gap-1 bg-gray-100 rounded-xl p-1">
           <button
             onClick={() => setTab("escalations")}
             className={`flex-1 flex items-center justify-center gap-2 py-2 rounded-lg text-sm font-medium transition-all ${
-              tab === "escalations" ? "bg-white text-slate-900 shadow-sm" : "text-slate-500 hover:text-slate-700"
+              tab === "escalations" ? "bg-white text-gray-900 shadow-sm" : "text-gray-500 hover:text-gray-700"
             }`}
           >
             <AlertTriangle className="w-3.5 h-3.5" />
@@ -102,7 +102,7 @@ export default function ReviewPage({ params }: { params: Promise<{ id: string }>
           <button
             onClick={() => setTab("data")}
             className={`flex-1 flex items-center justify-center gap-2 py-2 rounded-lg text-sm font-medium transition-all ${
-              tab === "data" ? "bg-white text-slate-900 shadow-sm" : "text-slate-500 hover:text-slate-700"
+              tab === "data" ? "bg-white text-gray-900 shadow-sm" : "text-gray-500 hover:text-gray-700"
             }`}
           >
             <Table className="w-3.5 h-3.5" />
@@ -111,7 +111,7 @@ export default function ReviewPage({ params }: { params: Promise<{ id: string }>
           <button
             onClick={() => setTab("decisions")}
             className={`flex-1 flex items-center justify-center gap-2 py-2 rounded-lg text-sm font-medium transition-all ${
-              tab === "decisions" ? "bg-white text-slate-900 shadow-sm" : "text-slate-500 hover:text-slate-700"
+              tab === "decisions" ? "bg-white text-gray-900 shadow-sm" : "text-gray-500 hover:text-gray-700"
             }`}
           >
             <ListChecks className="w-3.5 h-3.5" />
@@ -128,17 +128,17 @@ export default function ReviewPage({ params }: { params: Promise<{ id: string }>
         {tab === "escalations" && (
           <div className="space-y-3">
             {pending.length === 0 && resolved.length === 0 && (
-              <div className="bg-white rounded-2xl border border-slate-200 p-12 text-center">
-                <Inbox className="w-10 h-10 text-slate-300 mx-auto mb-3" />
-                <p className="text-sm text-slate-500">No escalations yet</p>
-                <p className="text-xs text-slate-400 mt-1">Start the agent from the Upload tab</p>
+              <div className="bg-white rounded-2xl border border-gray-200 p-12 text-center">
+                <Inbox className="w-10 h-10 text-gray-300 mx-auto mb-3" />
+                <p className="text-sm text-gray-500">No escalations yet</p>
+                <p className="text-xs text-gray-400 mt-1">Start the agent from the Upload tab</p>
               </div>
             )}
 
             {pending.length > 0 && (
               <>
                 <div className="flex items-center gap-2">
-                  <h3 className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Needs Review</h3>
+                  <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Needs Review</h3>
                   <span className="bg-amber-100 text-amber-700 text-[10px] font-bold px-1.5 py-0.5 rounded-md">{pending.length}</span>
                 </div>
                 {pending.map((esc) => (
@@ -179,7 +179,7 @@ export default function ReviewPage({ params }: { params: Promise<{ id: string }>
 
             {resolved.length > 0 && (
               <>
-                <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wider pt-4">Resolved</h3>
+                <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider pt-4">Resolved</h3>
                 {resolved.map((esc) => (
                   <EscalationCard key={esc.id} escalation={esc} sessionId={id} onResolved={loadData} />
                 ))}
@@ -189,7 +189,7 @@ export default function ReviewPage({ params }: { params: Promise<{ id: string }>
         )}
 
         {tab === "data" && (
-          <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+          <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
             <DataPreviewTable records={records} />
           </div>
         )}
@@ -197,28 +197,28 @@ export default function ReviewPage({ params }: { params: Promise<{ id: string }>
         {tab === "decisions" && (
           <div className="space-y-4">
             {/* Mappings */}
-            <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-              <div className="px-6 py-4 border-b border-slate-100">
-                <h3 className="font-semibold text-slate-900 text-sm">Column Mappings</h3>
-                <p className="text-[11px] text-slate-400 mt-0.5">{allMappings.length} mapping decisions</p>
+            <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+              <div className="px-6 py-4 border-b border-gray-100">
+                <h3 className="font-semibold text-gray-900 text-sm">Column Mappings</h3>
+                <p className="text-[11px] text-gray-400 mt-0.5">{allMappings.length} mapping decisions</p>
               </div>
               <MappingTable mappings={allMappings} sessionId={id} readOnly />
             </div>
 
             {/* Escalation Summary */}
             {escalations.length > 0 && (
-              <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-                <div className="px-6 py-4 border-b border-slate-100">
-                  <h3 className="font-semibold text-slate-900 text-sm">Escalation Summary</h3>
-                  <p className="text-[11px] text-slate-400 mt-0.5">{escalations.length} total escalations</p>
+              <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+                <div className="px-6 py-4 border-b border-gray-100">
+                  <h3 className="font-semibold text-gray-900 text-sm">Escalation Summary</h3>
+                  <p className="text-[11px] text-gray-400 mt-0.5">{escalations.length} total escalations</p>
                 </div>
-                <div className="divide-y divide-slate-100">
+                <div className="divide-y divide-gray-100">
                   {escalations.map((esc) => (
                     <div key={esc.id} className="px-6 py-3 flex items-center gap-3">
                       <span className={`w-2 h-2 rounded-full shrink-0 ${
                         esc.status === "pending" ? "bg-amber-400" : "bg-emerald-400"
                       }`} />
-                      <span className="text-xs text-slate-600 flex-1 truncate">{esc.description}</span>
+                      <span className="text-xs text-gray-600 flex-1 truncate">{esc.description}</span>
                       <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-md ${
                         esc.status === "pending"
                           ? "bg-amber-100 text-amber-700"
@@ -226,7 +226,7 @@ export default function ReviewPage({ params }: { params: Promise<{ id: string }>
                       }`}>
                         {esc.status}
                       </span>
-                      <span className="text-[10px] text-slate-400">{esc.phase}</span>
+                      <span className="text-[10px] text-gray-400">{esc.phase}</span>
                     </div>
                   ))}
                 </div>

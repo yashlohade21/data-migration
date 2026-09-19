@@ -34,12 +34,12 @@ export default function StepIndicator({ currentPhase, status }: Props) {
           <div key={phase} className="flex items-center flex-1 last:flex-none">
             <div className="flex flex-col items-center">
               <div className={`
-                w-9 h-9 rounded-full flex items-center justify-center text-xs font-semibold transition-all duration-300 border-2
-                ${isCompleted ? "bg-emerald-500 border-emerald-500 text-white shadow-sm" : ""}
-                ${isCurrent && isProcessing ? "bg-indigo-500 border-indigo-500 text-white shadow-sm shadow-indigo-200" : ""}
-                ${isAwaiting ? "bg-amber-400 border-amber-400 text-white shadow-sm shadow-amber-200" : ""}
+                w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300 border-2
+                ${isCompleted ? "bg-emerald-500 border-emerald-500 text-white shadow-sm shadow-emerald-200" : ""}
+                ${isCurrent && isProcessing ? "bg-indigo-600 border-indigo-600 text-white shadow-md shadow-indigo-200" : ""}
+                ${isAwaiting ? "bg-amber-500 border-amber-500 text-white shadow-md shadow-amber-200" : ""}
                 ${isStoppedHere ? "bg-red-500 border-red-500 text-white shadow-sm shadow-red-200" : ""}
-                ${!isCompleted && !isCurrent ? "bg-white border-slate-200 text-slate-400" : ""}
+                ${!isCompleted && !isCurrent ? "bg-gray-50 border-gray-200 text-gray-400" : ""}
                 ${isCancelled && idx < currentIdx ? "bg-emerald-500 border-emerald-500 text-white shadow-sm" : ""}
               `}>
                 {isCompleted || (isCancelled && idx < currentIdx) ? (
@@ -52,11 +52,11 @@ export default function StepIndicator({ currentPhase, status }: Props) {
                   <span>{idx + 1}</span>
                 )}
               </div>
-              <span className={`text-[11px] mt-1.5 font-medium tracking-wide ${
+              <span className={`text-[11px] mt-1.5 font-semibold tracking-wide ${
                 isStoppedHere ? "text-red-600" :
-                isCurrent ? "text-slate-900" :
+                isCurrent ? "text-gray-900" :
                 isCompleted || (isCancelled && idx < currentIdx) ? "text-emerald-600" :
-                "text-slate-400"
+                "text-gray-400"
               }`}>
                 {PHASE_LABELS[phase]}
               </span>
@@ -65,7 +65,7 @@ export default function StepIndicator({ currentPhase, status }: Props) {
               <div className={`h-[2px] flex-1 mx-2 mt-[-18px] rounded-full transition-colors duration-300 ${
                 (idx < currentIdx && !isCancelled) || status === "completed" ? "bg-emerald-400" :
                 isCancelled && idx < currentIdx ? "bg-emerald-400" :
-                "bg-slate-200"
+                "bg-gray-200"
               }`} />
             )}
           </div>
